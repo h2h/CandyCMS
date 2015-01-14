@@ -1,0 +1,407 @@
+﻿html, body {
+    height: 100%;
+    width: 100%;
+    font-size: 12px;
+    background: #eef1f4;
+    font-family: Helvetica Neue,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;
+    /*background:url(../img/install-bg.jpg) center center;*/
+}
+/* 
+ * Scroller v3.1.0 - 2014-10-27 
+ * A jQuery plugin for replacing default browser scrollbars. Part of the Formstone Library. 
+ * http://formstone.it/scroller/ 
+ * 
+ * Copyright 2014 Ben Plum; MIT Licensed 
+ */
+
+.scroller {
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+}
+
+    .scroller, .scroller * {
+        /*-webkit-user-select: none !important;
+        -moz-user-select: none !important;
+        -ms-user-select: none !important;
+        user-select: none !important;*/
+    }
+
+.scroller, .scroller-content, .scroller-bar, .scroller-track, .scroller-handle {
+    box-sizing: border-box;
+}
+
+.scroller-content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+    .scroller-content::-webkit-scrollbar, .scroller-content::-webkit-scrollbar-button, .scroller-content::-webkit-scrollbar-track, .scroller-content::-webkit-scrollbar-track-piece, .scroller-content::-webkit-scrollbar-thumb, .scroller-content::-webkit-scrollbar-corner, .scroller-content::-webkit-resizer {
+        background: 0 0;
+        opacity: 0;
+    }
+
+.scroller-bar {
+    width: 16px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    background: #fff;
+    border: 1px solid #eee;
+    border-width: 0 0 0 1px;
+    display: none;
+}
+
+.scroller-track {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: #fff;
+    overflow: hidden;
+}
+
+.scroller-handle {
+    width: 10px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    right: 3px;
+    z-index: 2;
+    background: #ccc;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.scroller-horizontal .scroller-content {
+    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0 0 16px 0;
+}
+
+.scroller-horizontal .scroller-bar {
+    width: 100%;
+    height: 16px;
+    top: auto;
+    bottom: 0;
+    border-width: 1px 0 0 0;
+}
+
+.scroller-horizontal .scroller-handle {
+    width: 20px;
+    height: 10px;
+    top: auto;
+    right: auto;
+    bottom: 3px;
+}
+
+.scroller-setup .scroller-content, .scroller-active .scroller-content {
+    padding: 20px;
+}
+
+.scroller-setup .scroller-bar, .scroller-active .scroller-bar {
+    display: block;
+}
+
+
+/* Install Page Start */
+
+#page-container {
+    position: relative;
+    height: 100%;
+}
+
+.install-box {
+    width: 650px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.08);
+    position: absolute;
+    left: -100%;
+    top: -100%;
+    transition: top 0.6s;
+    border-radius: 4px;
+}
+
+.install-header {
+    height: 180px;
+    background-image: url(../img/install-head-bg.jpg);
+    background-position: center -250px;
+    border-radius: 4px 4px 0px 0px;
+    transition: all 0.6s;
+}
+
+    .install-header.second {
+        height: 50px;
+        background-position: center top;
+    }
+
+    .install-header h1 {
+        font-weight: normal;
+        text-align: center;
+        line-height: 180px;
+        margin: 0px;
+        color: #fff;
+        transition: all 0.6s;
+    }
+
+    .install-header.second h1 {
+        line-height: 50px;
+    }
+
+    .install-header:hover {
+        background-position: -650px -250px;
+    }
+
+.install-content {
+    height: 190px;
+    overflow: hidden;
+    transition: all 0.6s;
+    position: relative;
+}
+
+    .install-content .main {
+        top: 0px;
+        position: relative;
+        transition: top 0.6s;
+    }
+
+    .install-content .copyright {
+        height: 190px;
+    }
+
+.copyright .title {
+    margin-bottom: 20px;
+}
+
+    .copyright .title h1 {
+        text-align: center;
+        margin: 0px;
+        font-size: 18px;
+        color: #2c4251;
+    }
+
+.copyright h2 {
+    border-left: 3px solid #7b77c9;
+    background: #f5f8fc;
+    margin: 0px -20px;
+    padding: 5px 10px;
+    font-size: 16px;
+    color: #758697;
+    font-weight: 700;
+}
+
+.copyright .inner {
+    color: #666;
+    line-height: 25px;
+}
+
+    .copyright .inner p {
+    }
+
+    .copyright .inner kbd {
+        background: #758697;
+        color: #fff;
+        border-radius: 2px;
+        padding: 2px 5px;
+    }
+
+.install-content .configure {
+    height: 395px;
+}
+
+.install-content .loading {
+    height: 212px;
+}
+
+.configure form {
+}
+
+.box {
+    padding: 30px;
+    padding-bottom: 15px;
+}
+
+    .box::after, .box::before {
+        display: table;
+        content: "";
+    }
+
+    .box::after {
+        clear: both;
+    }
+
+.box-title {
+    border-top: 1px solid #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
+    background: #f5f8fc;
+    margin: -30px;
+    margin-bottom: 30px;
+}
+
+.box:first-child .box-title {
+    border-top: none;
+}
+
+.box-title h3 {
+    line-height: 30px;
+    margin: 0px;
+    padding-left: 15px;
+    color: #758697;
+    font-weight: normal;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    padding-left: 68px;
+    width: 50%;
+    box-sizing: border-box;
+    float: left;
+}
+
+    .form-group .control-label {
+        width: 58px;
+        display: inline-block;
+        margin-left: -68px;
+        font-weight: bold;
+        float: left;
+        padding: 8px 10px 8px 0px;
+        text-align: right;
+        color: #1a2c3f;
+    }
+
+    .form-group .form-control {
+        border: 2px solid #eff1f5;
+        padding: 6px 10px;
+        color: #767f91;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+.install-status {
+    padding: 110px 0px 100px 0px;
+}
+
+.install-status-process {
+    position: relative;
+    width: 610px;
+    margin: 0px auto;
+}
+
+.status-process-bg {
+    width: 600px;
+    margin: 0px auto;
+    height: 12px;
+    display: block;
+    background: #2c4251;
+}
+
+.status-process {
+    background: #5cba3c;
+    height: 8px;
+    width: 600px;
+    display: block;
+    margin: 0px auto;
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    z-index: 2;
+}
+
+.status-point {
+    background: #2c4251;
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    float: left;
+    margin-right: 170px;
+    margin-top: -21px;
+    margin-left: -5px;
+    position: relative;
+}
+
+    .status-point:last-child {
+        margin-right: 0px;
+    }
+
+.status-success {
+    width: 24px;
+    height: 24px;
+    display: block;
+    border-radius: 12px;
+    background: #5cba3c url(../img/status-success.jpg) center center;
+    margin-left: 3px;
+    margin-top: 3px;
+    position: relative;
+    z-index: 3;
+}
+
+.status-current {
+    box-sizing: border-box;
+    border: 5px solid #5cba3c;
+    border-radius: 12px;
+    width: 24px;
+    height: 24px;
+    background: #20303a;
+    display: block;
+    margin-top: 3px;
+    position: relative;
+    margin-left: 3px;
+    z-index: 3;
+}
+
+.status-text {
+    position: absolute;
+    top: -26px;
+    font-weight: 500;
+    color: #c0cad7;
+    width: 80px;
+    text-align: center;
+    margin-left: -25px;
+}
+
+    .status-text.current {
+        color: #5b646d;
+        font-weight: 800;
+    }
+
+.install-footer {
+    height: 80px;
+    text-align: center;
+    border-top: 1px solid #f2f2f2;
+    background: #f5f8fc;
+    border-radius: 0px 0px 4px 4px;
+}
+
+    .install-footer a.btn {
+        background: #5cba3c;
+        color: #FFF;
+        border: none;
+        display: inline-block;
+        padding: 11px 40px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 2px;
+        margin: 20px auto;
+        box-shadow: 0 2px 1px rgba(0,0,0,0.15);
+        text-decoration: none;
+    }
+
+        .install-footer a.btn:hover {
+            opacity: 0.9;
+animation: ue-pudding 1s linear;
+        }
+
+        .install-footer a.btn.disable {
+            opacity: 0.9;
+            cursor: default;
+        }
+/* Install Page End */

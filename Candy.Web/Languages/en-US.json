@@ -1,0 +1,18 @@
+{
+    "LanguageCulture":"en-US",
+    "LanguageResources":
+    [
+        {
+            "Key":"Install",
+            "Value":"Install"
+        },
+        {
+            "Key":"Reinstall",
+            "Value":"Reinstall"
+        },
+        {
+            "Key":"Uninstall",
+            "Value":"Uninstall"
+        }
+    ]
+}

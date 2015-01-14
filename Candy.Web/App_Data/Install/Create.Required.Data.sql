@@ -1,0 +1,20 @@
+﻿SET IDENTITY_INSERT [dbo].[Setting] ON
+INSERT [dbo].[Setting] ([Id], [Name], [Value], [AutoLoad]) VALUES (1, N'system.version', N'0.0.1', 0)
+INSERT [dbo].[Setting] ([Id], [Name], [Value], [AutoLoad]) VALUES (2, N'sitesettings.icpno', N'123456', 1)
+INSERT [dbo].[Setting] ([Id], [Name], [Value], [AutoLoad]) VALUES (3, N'sitesettings.sitedescription', N'CandyCMS 官方网站', 1)
+INSERT [dbo].[Setting] ([Id], [Name], [Value], [AutoLoad]) VALUES (4, N'sitesettings.sitename', N'CandyCMS', 1)
+INSERT [dbo].[Setting] ([Id], [Name], [Value], [AutoLoad]) VALUES (5, N'sitesettings.siteurl', N'www.candycms.org', 1)
+INSERT [dbo].[Setting] ([Id], [Name], [Value], [AutoLoad]) VALUES (6, N'sitesettings.enbaled', N'False', 1)
+INSERT [dbo].[Setting] ([Id], [Name], [Value], [AutoLoad]) VALUES (7, N'sitesettings.keywords', N'Hello,World,key,hubert', 1)
+INSERT [dbo].[Setting] ([Id], [Name], [Value], [AutoLoad]) VALUES (8, N'sitesettings.dateformat', N'yyyy年MM月dd日', 1)
+INSERT [dbo].[Setting] ([Id], [Name], [Value], [AutoLoad]) VALUES (9, N'sitesettings.language', N'zh-CN', 1)
+INSERT [dbo].[Setting] ([Id], [Name], [Value], [AutoLoad]) VALUES (10, N'sitesettings.timeformat', N'HH:mm', 1)
+INSERT [dbo].[Setting] ([Id], [Name], [Value], [AutoLoad]) VALUES (11, N'sitesettings.timezone', N'China Standard Time', 1)
+INSERT [dbo].[Setting] ([Id], [Name], [Value], [AutoLoad]) VALUES (12, N'sitesettings.adminemailaddress', N'admin@candybbs.org', 1)
+INSERT [dbo].[Setting] ([Id], [Name], [Value], [AutoLoad]) VALUES (13, N'sitesettings.notificationemailaddress', N'no-reply@candybbs.org', 1)
+INSERT [dbo].[Setting] ([Id], [Name], [Value], [AutoLoad]) VALUES (14, N'sitesettings.smtpserver', N'smtp.qq.com', 1)
+INSERT [dbo].[Setting] ([Id], [Name], [Value], [AutoLoad]) VALUES (15, N'sitesettings.smtpprot', N'3326', 1)
+INSERT [dbo].[Setting] ([Id], [Name], [Value], [AutoLoad]) VALUES (16, N'sitesettings.smtpusername', N'no-reply@candybbs.org', 1)
+INSERT [dbo].[Setting] ([Id], [Name], [Value], [AutoLoad]) VALUES (17, N'sitesettings.smtppassword', N'406175408', 1)
+SET IDENTITY_INSERT [dbo].[Setting] OFF
+GO

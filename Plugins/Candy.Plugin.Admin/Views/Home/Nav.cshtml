@@ -1,0 +1,188 @@
+﻿@{
+    Layout = null;
+}
+<!-- list -->
+<ul class="nav">
+    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+        <span>系统</span>
+    </li>
+    <li>
+        <a href class="auto">
+            <span class="pull-right text-muted">
+                <i class="fa fa-fw fa-angle-right text"></i>
+                <i class="fa fa-fw fa-angle-down text-active"></i>
+            </span>
+            <i class="glyphicon glyphicon-stats icon text-primary-dker"></i>
+            <span class="font-bold">仪表盘</span>
+        </a>
+        <ul class="nav nav-sub dk">
+            <li class="nav-sub-header">
+                <a href>
+                    <span>仪表盘</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="admin.dashboard">
+                    <span>首页</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="admin.update">
+                    <b class="label bg-info pull-right">N</b>
+                    <span>更新</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="line dk"></li>
+    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+        <span>内容</span>
+    </li>
+    <li>
+        <a href="" class="auto">
+            <span class="pull-right text-muted">
+                <i class="fa fa-fw fa-angle-right text"></i>
+                <i class="fa fa-fw fa-angle-down text-active"></i>
+            </span>
+            <i class="fa fa-file-text-o icon text-success"></i>
+            <span class="font-bold">文章</span>
+        </a>
+        <ul class="nav nav-sub dk">
+            <li class="nav-sub-header">
+                <a href="">
+                    <span>文章</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="settings">
+                    <span>所有文章</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="line dk"></li>
+    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+        <span>功能</span>
+    </li>
+    <li ng-class="{active:$state.includes('admin.settings')}">
+        <a href class="auto">
+            <span class="pull-right text-muted">
+                <i class="fa fa-fw fa-angle-right text"></i>
+                <i class="fa fa-fw fa-angle-down text-active"></i>
+            </span>
+            <i class="glyphicon glyphicon-cog icon text-success"></i>
+            <span class="font-bold">设置</span>
+        </a>
+        <ul class="nav nav-sub dk">
+            <li class="nav-sub-header">
+                <a href>
+                    <span>设置</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="admin.settings.basesettings">
+                    <span>基本设置</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li ng-class="{active:$state.includes('admin.themes')}">
+        <a href class="auto">
+            <span class="pull-right text-muted">
+                <i class="fa fa-fw fa-angle-right text"></i>
+                <i class="fa fa-fw fa-angle-down text-active"></i>
+            </span>
+            <i class="glyphicon glyphicon-tree-conifer icon text-success"></i>
+            <span class="font-bold">主题</span>
+        </a>
+        <ul class="nav nav-sub dk">
+            <li class="nav-sub-header">
+                <a href>
+                    <span>主题</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="admin.themes.installed">
+                    <span>已安装</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="admin.themes.store">
+                    <span>主题商店</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li ng-class="{active:$state.includes('admin.plugins')}">
+        <a href class="auto">
+            <span class="pull-right text-muted">
+                <i class="fa fa-fw fa-angle-right text"></i>
+                <i class="fa fa-fw fa-angle-down text-active"></i>
+            </span>
+            <i class="glyphicon glyphicon-th-large icon text-success"></i>
+            <span class="font-bold">插件</span>
+        </a>
+        <ul class="nav nav-sub dk">
+            <li class="nav-sub-header">
+                <a href>
+                    <span>插件</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="admin.plugins.installed">
+                    <span>已安装</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="admin.plugins.store">
+                    <span>插件商店</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li ng-class="{active:$state.includes('admin.users')}">
+        <a href class="auto">
+            <span class="pull-right text-muted">
+                <i class="fa fa-fw fa-angle-right text"></i>
+                <i class="fa fa-fw fa-angle-down text-active"></i>
+            </span>
+            <i class="icon-users icon text-success"></i>
+            <span class="font-bold">用户</span>
+        </a>
+        <ul class="nav nav-sub dk">
+            <li class="nav-sub-header">
+                <a href>
+                    <span>用户</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="admin.users.list">
+                    <span>所有用户</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="admin.users.new">
+                    <span>添加用户</span>
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="line dk hidden-folded"></li>
+
+    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+        <span>个人</span>
+    </li>
+    <li>
+        <a ui-sref="admin.page.profile">
+            <i class="icon-user icon text-success-lter"></i>
+            <b class="badge bg-success pull-right">30%</b>
+            <span>@Html.Lang("Candy.Plugin.Admin.Profile")</span>
+        </a>
+    </li>
+    <li>
+        <a ui-sref="app.docs">
+            <i class="icon-question icon"></i>
+            <span>帮助</span>
+        </a>
+    </li>
+</ul>

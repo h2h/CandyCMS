@@ -1,0 +1,22 @@
+{
+    "LanguageCulture": "zh-CN",
+    "LanguageResources": 
+    [
+        {
+            "Key": "Candy.Core.SignInTitle",
+            "Value": "登录"
+        },
+        {
+            "Key": "Install",
+            "Value": "安装"
+        },
+        {
+            "Key": "Reinstall",
+            "Value": "重新安装"
+        },
+        {
+            "Key": "Uninstall",
+            "Value": "卸载"
+        }
+    ]
+}

@@ -1,0 +1,127 @@
+﻿@model SiteSettingModel
+@{
+    Layout = null;
+}
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">@Html.Lang("Candy.Plugin.Admin.Setting.BaseSetting")</h1>
+    <small class="text-muted">@Html.Lang("Candy.Plugin.Admin.Setting.BaseSettingDescription")</small>
+</div>
+<div class="wrapper-md ng-scope" ng-controller="BaseSettingsCtrl">
+    <form class="form-horizontal" action="@Url.Action("Base", "Settings")" method="post">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-group pull-in clearfix">
+                    <div class="col-sm-6">
+                        <label class="control-label">网站标题</label>
+                        <input class="form-control" type="text" name="SiteName" placeholder="网站标题" value="@Model.SiteSettings.SiteName">
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="control-label">副标题</label>
+                        <input class="form-control" type="text" name="SiteDescription" placeholder="副标题" value="@Model.SiteSettings.SiteDescription">
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <div class="form-group pull-in clearfix">
+                    <div class="col-sm-6">
+                        <label class="control-label">网站地址</label>
+                        <div class="input-group">
+                            <span class="input-group-addon">http://</span>
+                            <input class="form-control" type="text" name="SiteUrl" placeholder="网站地址" value="@Model.SiteSettings.SiteUrl">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="control-label">备案号</label>
+                        <input class="form-control" type="text" name="ICPNo" placeholder="备案号" value="@Model.SiteSettings.ICPNo">
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <div class="form-group pull-in clearfix">
+                    <div class="col-sm-12">
+                        <label class="control-label">网站关键字</label>
+                        <textarea class="form-control" name="Keywords">@Model.SiteSettings.Keywords</textarea>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <div class="form-group pull-in clearfix">
+                    <div class="col-sm-6">
+                        <label class="control-label">时区</label>
+                        <select class="form-control" name="TimeZone">
+                            @foreach (var timeZone in TimeZoneInfo.GetSystemTimeZones())
+                            {
+                                <option value="@timeZone.Id" @(Model.SiteSettings.TimeZone == timeZone.Id ? "selected" : "")>@timeZone.DisplayName</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="control-label">语言</label>
+                        <select class="form-control" name="Language">
+                            @if (Model.Cultures.Any())
+                            {
+                                foreach (var culture in Model.Cultures)
+                                {
+                                    <option value="@culture.Name" @(Model.SiteSettings.Language.Equals(culture.Name, StringComparison.OrdinalIgnoreCase) ? "selected" : "")>@culture.DisplayName</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <div class="form-group pull-in clearfix">
+                    <div class="col-sm-6">
+                        <label class="control-label">日期格式</label>
+                        <select class="form-control" name="DateFormat">
+                            <option value="yyyy年MM月dd日" @(Model.SiteSettings.DateFormat == "yyyy年MM月dd日" ? "selected" : "")>@DateTime.Now.ToString("yyyy年MM月dd日")</option>
+                            <option value="yyyy-MM-dd" @(Model.SiteSettings.DateFormat == "yyyy-MM-dd" ? "selected" : "")>@DateTime.Now.ToString("yyyy-MM-dd")</option>
+                            <option value="MM/dd/yyyy" @(Model.SiteSettings.DateFormat == "MM/dd/yyyy" ? "selected" : "")>@DateTime.Now.ToString("MM/dd/yyyy")</option>
+                            <option value="dd/MM/yyyy" @(Model.SiteSettings.DateFormat == "dd/MM/yyyy" ? "selected" : "")>@DateTime.Now.ToString("dd/MM/yyyy")</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="control-label">时间格式</label>
+                        <select class="form-control" name="TimeFormat">
+                            <option value="tt hh:mm" @(Model.SiteSettings.TimeFormat == "tt hh:mm" ? "selected" : "")>@DateTime.Now.ToString("tt hh:mm")</option>
+                            <option value="hh:mm tt" @(Model.SiteSettings.TimeFormat == "hh:mm tt" ? "selected" : "")>@DateTime.Now.ToString("hh:mm tt")</option>
+                            <option value="HH:mm" @(Model.SiteSettings.TimeFormat == "HH:mm" ? "selected" : "")>@DateTime.Now.ToString("HH:mm")</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <div class="form-group pull-in clearfix">
+                    <div class="col-sm-6">
+                        <label class="control-label">管理员邮箱地址</label>
+                        <input class="form-control" type="text" name="AdminEmailAddress" placeholder="管理员邮箱地址" value="@Model.SiteSettings.AdminEmailAddress">
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="control-label">消息邮箱地址</label>
+                        <input class="form-control" type="text" name="NotificationEmailAddress" placeholder="消息邮箱地址" value="@Model.SiteSettings.NotificationEmailAddress">
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <div class="form-group pull-in clearfix">
+                    <div class="col-sm-6">
+                        <label class="control-label">SMTP 服务器</label>
+                        <input class="form-control" type="text" name="SMTPServer" placeholder="SMTP 服务器" value="@Model.SiteSettings.SMTPServer">
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="control-label">SMTP 端口</label>
+                        <input class="form-control" type="text" name="SMTPProt" placeholder="SMTP 端口" value="@Model.SiteSettings.SMTPProt">
+                    </div>
+                </div>
+                <div class="line line-dashed b-b line-lg pull-in"></div>
+                <div class="form-group pull-in clearfix">
+                    <div class="col-sm-6">
+                        <label class="control-label">SMTP 用户名</label>
+                        <input class="form-control" type="text" name="SMTPUserName" placeholder="SMTP 用户名" value="@Model.SiteSettings.SMTPUserName">
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="control-label">SMTP 密码</label>
+                        <input class="form-control" type="text" name="SMTPPassword" placeholder="SMTP 密码" value="@Model.SiteSettings.SMTPPassword">
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer text-left bg-light lter">
+                <button type="submit" class="btn btn-success">保存设置</button>
+            </div>
+        </div>
+    </form>
+</div>

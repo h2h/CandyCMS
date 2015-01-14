@@ -1,0 +1,61 @@
+﻿{
+    "LanguageCulture": "zh-CN",
+    "LanguageResources": [
+        {
+            "Key": "Candy.Plugin.Admin.Setting.BaseSetting",
+            "Value": "基本设置"
+        },
+        {
+            "Key": "Candy.Plugin.Admin.Setting.BaseSettingDescription",
+            "Value": "管理网站基本设置"
+        },
+        {
+            "key": "Candy.Plugin.Admin.Profile",
+            "Value": "个人资料"
+        },
+        {
+            "Key": "Candy.Plugin.Admin.Profile.SubTitle",
+            "Value": "修改个人资料"
+        },
+        {
+            "Key": "Candy.Plugin.Admin.Profile.Settings",
+            "Value": "个人设置"
+        },
+        {
+            "Key": "Candy.Plugin.Admin.Profile.Username",
+            "Value": "用户名"
+        },
+        {
+            "Key": "Candy.Plugin.Admin.Profile.Nicename",
+            "Value": "昵称"
+        },
+        {
+            "Key": "Candy.Plugin.Admin.Profile.FirstName",
+            "Value": "名字"
+        },
+        {
+            "Key": "Candy.Plugin.Admin.Profile.LastName",
+            "Value": "姓氏"
+        },
+        {
+            "Key": "Candy.Plugin.Admin.Profile.Description",
+            "Value": "个人说明"
+        },
+        {
+            "Key": "Candy.Plugin.Admin.Profile.Email",
+            "Value": "电子邮件"
+        },
+        {
+            "Key": "Candy.Plugin.Admin.Profile.WebSite",
+            "Value": "个人网站"
+        },
+        {
+            "Key": "Candy.Plugin.Admin.Users",
+            "Value": "所有用户"
+        },
+        {
+            "Key": "Candy.Plugin.Admin.Users.SubTitle",
+            "Value": "用户列表"
+        }
+    ]
+}

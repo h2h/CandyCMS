@@ -1,0 +1,11 @@
+﻿{
+    "Name": "Manager",
+    "Author": "The Candy CMS Team",
+	"Website": "http://www.candybbs.org",
+	"Version": "0.0.1",
+	"SupportedVersions": "0.0.1",
+	"Description": "后台管理模块",
+    "Category": "Core",
+    "FileName": "Candy.Plugin.Admin.dll",
+    "DisplayOrder": 1
+}

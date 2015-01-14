@@ -1,0 +1,84 @@
+﻿@{
+    Layout = null;
+}
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">@Html.Lang("Candy.Plugin.Admin.Users")</h1>
+    <small class="text-muted">@Html.Lang("Candy.Plugin.Admin.Users.SubTitle")</small>
+</div>
+<div class="wrapper-md ng-scope" ng-controller="UserProfileCtrl">
+    <div class="panel panel-default">
+        <div class="panel-heading">@Html.Lang("Candy.Plugin.Admin.Users")</div>
+        <div class="row wrapper">
+
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped b-t b-l b-light">
+                <thead>
+                    <tr>
+                        <th>
+                            <label class="i-checks m-b-none">
+                                <input type="checkbox">
+                                <i></i>
+                            </label>
+                        </th>
+                        <th>用户名</th>
+                        <th>昵称</th>
+                        <th>邮箱</th>
+                        <th>上次登录时间</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <label class="i-checks m-b-none">
+                                <input type="checkbox" name="post[]">
+                                <i></i>
+                            </label>
+                        </td>
+                        <td>Admin</td>
+                        <td>Hubert</td>
+                        <td>406175408@qq.com</td>
+                        <td>@DateTime.Now.ToString("yyyy-MM-dd")</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="i-checks m-b-none">
+                                <input type="checkbox" name="post[]">
+                                <i></i>
+                            </label>
+                        </td>
+                        <td>Admin</td>
+                        <td>Hubert</td>
+                        <td>406175408@qq.com</td>
+                        <td>@DateTime.Now.ToString("yyyy-MM-dd")</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="i-checks m-b-none">
+                                <input type="checkbox" name="post[]">
+                                <i></i>
+                            </label>
+                        </td>
+                        <td>Admin</td>
+                        <td>Hubert</td>
+                        <td>406175408@qq.com</td>
+                        <td>@DateTime.Now.ToString("yyyy-MM-dd")</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="panel-footer">
+            <div class="row">
+                <div class="col-sm-4">
+                    <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
+                </div>
+                <div class="col-sm-4">
+                    <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
+                </div>
+                <div class="col-sm-4">
+                    <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
