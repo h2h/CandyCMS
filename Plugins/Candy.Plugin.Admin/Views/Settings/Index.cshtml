@@ -54,7 +54,7 @@
                     </div>
                     <div class="col-sm-6">
                         <label class="control-label">语言</label>
-                        <select class="form-control" name="Language">
+                        <select ui-jq="chosen" class="form-control" name="Language">
                             @if (Model.Cultures.Any())
                             {
                                 foreach (var culture in Model.Cultures)
@@ -69,7 +69,7 @@
                 <div class="form-group pull-in clearfix">
                     <div class="col-sm-6">
                         <label class="control-label">日期格式</label>
-                        <select class="form-control" name="DateFormat">
+                        <select ui-jq="chosen" class="form-control" name="DateFormat">
                             <option value="yyyy年MM月dd日" @(Model.SiteSettings.DateFormat == "yyyy年MM月dd日" ? "selected" : "")>@DateTime.Now.ToString("yyyy年MM月dd日")</option>
                             <option value="yyyy-MM-dd" @(Model.SiteSettings.DateFormat == "yyyy-MM-dd" ? "selected" : "")>@DateTime.Now.ToString("yyyy-MM-dd")</option>
                             <option value="MM/dd/yyyy" @(Model.SiteSettings.DateFormat == "MM/dd/yyyy" ? "selected" : "")>@DateTime.Now.ToString("MM/dd/yyyy")</option>
@@ -78,7 +78,7 @@
                     </div>
                     <div class="col-sm-6">
                         <label class="control-label">时间格式</label>
-                        <select class="form-control" name="TimeFormat">
+                        <select ui-jq="chosen" class="form-control" name="TimeFormat">
                             <option value="tt hh:mm" @(Model.SiteSettings.TimeFormat == "tt hh:mm" ? "selected" : "")>@DateTime.Now.ToString("tt hh:mm")</option>
                             <option value="hh:mm tt" @(Model.SiteSettings.TimeFormat == "hh:mm tt" ? "selected" : "")>@DateTime.Now.ToString("hh:mm tt")</option>
                             <option value="HH:mm" @(Model.SiteSettings.TimeFormat == "HH:mm" ? "selected" : "")>@DateTime.Now.ToString("HH:mm")</option>

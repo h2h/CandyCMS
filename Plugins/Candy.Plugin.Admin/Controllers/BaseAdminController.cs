@@ -10,5 +10,6 @@ namespace Candy.Plugin.Admin.Controllers
     [AdminAuthorize]
     public class BaseAdminController : BaseController
     {
+
     }
 } 

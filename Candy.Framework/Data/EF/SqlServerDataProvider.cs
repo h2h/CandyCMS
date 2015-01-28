@@ -1,11 +1,11 @@
-﻿using System.Data.Common;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
+﻿using System;
 using System.IO;
-using System;
 using System.Text;
+using System.Data.Common;
 using System.Web.Hosting;
+using System.Data.Entity;
+using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 
 namespace Candy.Framework.Data.EF
 {

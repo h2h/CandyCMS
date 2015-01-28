@@ -43,7 +43,6 @@ namespace Candy.Core.Services
         }
         public void SaveLanguage(string culture)
         {
-            
         }
         public Language Current()
         {

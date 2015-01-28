@@ -5,11 +5,26 @@
     <h1 class="m-n font-thin h3">@Html.Lang("Candy.Plugin.Admin.Users")</h1>
     <small class="text-muted">@Html.Lang("Candy.Plugin.Admin.Users.SubTitle")</small>
 </div>
-<div class="wrapper-md ng-scope" ng-controller="UserProfileCtrl">
+<div class="wrapper-md ng-scope" ng-controller="UserListCtrl">
     <div class="panel panel-default">
         <div class="panel-heading">@Html.Lang("Candy.Plugin.Admin.Users")</div>
         <div class="row wrapper">
-
+            <div class="col-sm-3 m-b-xs">
+                <select ng-model="action" class="input-sm form-control w-sm inline v-middle">
+                    <option value="0">批量操作</option>
+                    <option value="1">删除</option>
+                </select>
+                <button class="btn btn-sm btn-default" ng-click="Excute()">应用</button>
+            </div>
+            <div class="col-sm-6"></div>
+            <div class="col-sm-3">
+                <div class="input-group">
+                    <input ng-model="searchText" type="text" class="input-sm form-control" placeholder="搜索">
+                    <span class="input-group-btn">
+                        <button class="btn btn-sm btn-default" type="button" ng-click="Search()">搜索</button>
+                    </span>
+                </div>
+            </div>
         </div>
         <div class="table-responsive">
             <table class="table table-striped b-t b-l b-light">
@@ -17,7 +32,7 @@
                     <tr>
                         <th>
                             <label class="i-checks m-b-none">
-                                <input type="checkbox">
+                                <input type="checkbox" ng-click="selectAll($event)" ng-checked="isSelectedAll()">
                                 <i></i>
                             </label>
                         </th>
@@ -28,41 +43,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr ng-repeat="e in entities" ng-class="getSelectedClass(e.id)">
                         <td>
                             <label class="i-checks m-b-none">
-                                <input type="checkbox" name="post[]">
+                                <input type="checkbox" name="post[]" ng-checked="isSelected(e.id)" ng-click="updateSelection($event,e.id)">
                                 <i></i>
                             </label>
                         </td>
-                        <td>Admin</td>
-                        <td>Hubert</td>
-                        <td>406175408@qq.com</td>
-                        <td>@DateTime.Now.ToString("yyyy-MM-dd")</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="i-checks m-b-none">
-                                <input type="checkbox" name="post[]">
-                                <i></i>
-                            </label>
-                        </td>
-                        <td>Admin</td>
-                        <td>Hubert</td>
-                        <td>406175408@qq.com</td>
-                        <td>@DateTime.Now.ToString("yyyy-MM-dd")</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label class="i-checks m-b-none">
-                                <input type="checkbox" name="post[]">
-                                <i></i>
-                            </label>
-                        </td>
-                        <td>Admin</td>
-                        <td>Hubert</td>
-                        <td>406175408@qq.com</td>
-                        <td>@DateTime.Now.ToString("yyyy-MM-dd")</td>
+                        <td>{{e.UserName}}</td>
+                        <td>{{e.NiceName}}</td>
+                        <td>{{e.Email}}</td>
+                        <td>{{e.LastLoginDate}}</td>
                     </tr>
                 </tbody>
             </table>
