@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using Newtonsoft.Json;
 
 namespace Candy.Framework.Plugins
@@ -26,6 +24,7 @@ namespace Candy.Framework.Plugins
 
             return JsonConvert.DeserializeObject<List<string>>(text);
         }
+
         /// <summary>
         /// 保存已安装插件列表
         /// </summary>
@@ -36,6 +35,7 @@ namespace Candy.Framework.Plugins
             var text = JsonConvert.SerializeObject(plugins);
             File.WriteAllText(filePath, text);
         }
+
         /// <summary>
         /// 解析插件描述文件
         /// </summary>
@@ -48,6 +48,7 @@ namespace Candy.Framework.Plugins
 
             return description;
         }
+
         /// <summary>
         /// 保存插件描述文件
         /// </summary>

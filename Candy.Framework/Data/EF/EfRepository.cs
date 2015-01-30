@@ -43,6 +43,7 @@ namespace Candy.Framework.Data.EF
                 throw fail;
             }
         }
+
         public virtual void Insert(IEnumerable<T> entities)
         {
             try
@@ -68,6 +69,7 @@ namespace Candy.Framework.Data.EF
                 throw fail;
             }
         }
+
         public virtual void Update(T entity)
         {
             try
@@ -90,6 +92,7 @@ namespace Candy.Framework.Data.EF
                 throw fail;
             }
         }
+
         public virtual void Delete(T entity)
         {
             try
@@ -114,6 +117,7 @@ namespace Candy.Framework.Data.EF
                 throw fail;
             }
         }
+
         public virtual void Delete(IEnumerable<T> entities)
         {
             try
@@ -139,6 +143,7 @@ namespace Candy.Framework.Data.EF
                 throw fail;
             }
         }
+
         public virtual IQueryable<T> Table
         {
             get
@@ -146,6 +151,7 @@ namespace Candy.Framework.Data.EF
                 return this.Entities;
             }
         }
+
         public virtual IQueryable<T> TableNoTracking
         {
             get
@@ -153,6 +159,7 @@ namespace Candy.Framework.Data.EF
                 return this.Entities.AsNoTracking();
             }
         }
+
         protected virtual IDbSet<T> Entities
         {
             get

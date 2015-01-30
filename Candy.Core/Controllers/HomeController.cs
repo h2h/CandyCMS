@@ -1,9 +1,4 @@
-﻿using System;
-using System.Web.Mvc;
-
-using Candy.Framework;
-using Candy.Framework.Infrastructure;
-using Candy.Framework.Themes;
+﻿using System.Web.Mvc;
 
 namespace Candy.Core.Controllers
 {

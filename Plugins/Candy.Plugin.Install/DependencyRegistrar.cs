@@ -1,10 +1,7 @@
 ﻿using Autofac;
-
-using Candy.Plugin.Install.Services;
-
-using Candy.Framework.Data.EF;
 using Candy.Framework.Infrastructure;
 using Candy.Framework.Infrastructure.DependencyManagement;
+using Candy.Plugin.Install.Services;
 
 namespace Candy.Plugin.Install
 {

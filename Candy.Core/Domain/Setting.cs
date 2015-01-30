@@ -13,8 +13,11 @@ namespace Candy.Core.Domain
             this.Value = value;
             this.AutoLoad = autoLoad;
         }
+
         public string Name { get; set; }
+
         public string Value { get; set; }
+
         public bool AutoLoad { get; set; }
 
         public override string ToString()

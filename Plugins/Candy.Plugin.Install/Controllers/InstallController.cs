@@ -1,22 +1,13 @@
 ﻿using System;
-using System.Net;
-using System.Xml;
-using System.Linq;
-using System.Text;
-using System.Web.Mvc;
-using System.Threading;
 using System.Data.SqlClient;
-using System.Web.Configuration;
-using System.Collections.Generic;
-
-using Candy.Core;
-using Candy.Framework.Data;
+using System.Threading;
+using System.Web.Mvc;
+using System.Xml;
 using Candy.Core.Controllers;
-using Candy.Framework.Plugins;
+using Candy.Framework.Data;
+using Candy.Framework.Infrastructure;
 using Candy.Plugin.Install.Models;
 using Candy.Plugin.Install.Services;
-using Candy.Framework.Configuration;
-using Candy.Framework.Infrastructure;
 
 namespace Candy.Plugin.Install.Controllers
 {
@@ -29,6 +20,7 @@ namespace Candy.Plugin.Install.Controllers
             model.UserName = "admin";
             return View(model);
         }
+
         [HttpPost]
         public ActionResult Connection(InstallViewModel model)
         {
@@ -70,27 +62,33 @@ namespace Candy.Plugin.Install.Controllers
                 });
             }
         }
+
         [HttpPost]
         public ActionResult CreateDatabase()
         {
-            return Json(new { 
+            return Json(new
+            {
                 Status = true
             });
         }
+
         [HttpPost]
         public ActionResult Configure()
         {
             return View();
         }
+
         public object Reinstall()
         {
             var areaName = ControllerContext.RouteData.DataTokens["area"];
             return "Install.Reinstall , Area Name:" + areaName;
         }
+
         public ActionResult Upgrade()
         {
             return View();
         }
+
         /// <summary>
         /// 检查数据库是否存在
         /// </summary>
@@ -167,6 +165,7 @@ namespace Candy.Plugin.Install.Controllers
                                 e.Attributes["ProviderName"].Value = providerName;
                                 e.Attributes["ConnectionString"].Value = connectionString;
                                 break;
+
                             case "Application":
                                 e.Attributes["IsInstalled"].Value = "true";
                                 break;

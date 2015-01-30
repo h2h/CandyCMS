@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web;
 using System.Web.Hosting;
 using Candy.Framework.Configuration;
@@ -19,6 +16,7 @@ namespace Candy.Framework.Infrastructure
         {
             this._ensureBinFolderAssembliesLoaded = config.DynamicDiscovery;
         }
+
         /// <summary>
         /// 确保 Bin 文件夹所有程序集已经加载
         /// </summary>
@@ -27,6 +25,7 @@ namespace Candy.Framework.Infrastructure
             get { return _ensureBinFolderAssembliesLoaded; }
             set { _ensureBinFolderAssembliesLoaded = value; }
         }
+
         /// <summary>
         /// 获取 \Bin 文件夹物理路径
         /// </summary>

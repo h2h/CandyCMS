@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Candy.Plugin.Admin.Controllers
@@ -19,10 +18,12 @@ namespace Candy.Plugin.Admin.Controllers
         {
             this._dontValidate = dontValidate;
         }
+
         private void HandleUnauthorizedRequest(AuthorizationContext filterContext)
         {
             filterContext.Result = new HttpUnauthorizedResult();
         }
+
         private IEnumerable<AdminAuthorizeAttribute> GetAdminAuthorizeAttributes(ActionDescriptor descriptor)
         {
             return descriptor.GetCustomAttributes(typeof(AdminAuthorizeAttribute), true)
@@ -37,6 +38,7 @@ namespace Candy.Plugin.Admin.Controllers
                 return true;
             return false;
         }
+
         public void OnAuthorization(AuthorizationContext filterContext)
         {
             if (this._dontValidate)

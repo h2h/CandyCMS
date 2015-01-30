@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
 using System.Globalization;
-
+using System.Linq;
 using Candy.Core.Domain;
-
 using Candy.Framework.Caching;
 using Candy.Framework.Localization;
 
@@ -24,10 +22,12 @@ namespace Candy.Core.Services
             this._cacheManager = cacheManager;
             this._settingService = settingService;
         }
+
         public IEnumerable<Language> GetAllLanguages()
         {
             return LocalizerManager.Languages;
         }
+
         public IEnumerable<CultureInfo> GetAllCultureInfo()
         {
             var cultures = new List<CultureInfo>();
@@ -38,24 +38,28 @@ namespace Candy.Core.Services
             }
             return cultures;
         }
+
         public void DeleteLanguage(string culture)
         {
         }
+
         public void SaveLanguage(string culture)
         {
         }
+
         public Language Current()
         {
             var siteSetting = this._settingService.LoadSetting<SiteSettings>();
-            
-            string key = string.Format(LANGUAGES_CULTURE_KEY,siteSetting.Language);
-            var language = this._cacheManager.Get(key, () => { return GetByCulture(siteSetting.Language); });
+            var languageCulture = string.IsNullOrEmpty(siteSetting.Language) ? "zh-CN" : siteSetting.Language;
+            string key = string.Format(LANGUAGES_CULTURE_KEY, languageCulture);
+            var language = this._cacheManager.Get(key, () => { return GetByCulture(languageCulture); });
 
             return language;
         }
+
         public Language GetByCulture(string culture)
         {
-            return LocalizerManager.Languages.Where(l => l.LanguageCulture.Name.Equals(culture,StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
+            return LocalizerManager.Languages.Where(l => l.LanguageCulture.Name.Equals(culture, StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
         }
     }
 }

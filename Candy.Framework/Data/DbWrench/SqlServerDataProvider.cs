@@ -16,9 +16,8 @@ namespace Candy.Framework.Data.DbWrench
         public virtual void SetDatabaseInitializer()
         {
             // 创建表
-
-
         }
+
         /// <summary>
         /// 是否支持存储过程
         /// </summary>
@@ -29,6 +28,7 @@ namespace Candy.Framework.Data.DbWrench
                 return true;
             }
         }
+
         public virtual DbParameter GetParameter()
         {
             return new SqlParameter();

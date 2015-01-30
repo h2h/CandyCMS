@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 
 namespace Candy.Framework.ComponentModel
 {
@@ -15,6 +15,7 @@ namespace Candy.Framework.ComponentModel
             if (typeConverter == null)
                 throw new InvalidOperationException("No type converter exists for type " + typeof(T).FullName);
         }
+
         protected virtual string[] GetStringArray(string input)
         {
             if (string.IsNullOrEmpty(input))
@@ -32,6 +33,7 @@ namespace Candy.Framework.ComponentModel
             }
             return base.CanConvertFrom(context, sourceType);
         }
+
         public override object ConvertFrom(ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value)
         {
             if (value is string)
@@ -48,6 +50,7 @@ namespace Candy.Framework.ComponentModel
             }
             return base.ConvertFrom(context, culture, value);
         }
+
         public override object ConvertTo(ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, Type destinationType)
         {
             if (destinationType == typeof(string))

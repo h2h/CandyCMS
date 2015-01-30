@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 using Candy.Core.Domain;
 
@@ -17,17 +11,20 @@ namespace Candy.Core.Controllers
     {
         private readonly IUserService _userService;
         private readonly IAuthenticationService _authenticationService;
+
         public UserController(IUserService userService,
             IAuthenticationService authenticationService)
         {
             this._userService = userService;
             this._authenticationService = authenticationService;
         }
+
         [HttpGet]
         public ActionResult SignIn()
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult SignIn(LoginUserModel model)
         {
@@ -41,6 +38,7 @@ namespace Candy.Core.Controllers
             }
             return View();
         }
+
         [HttpPost]
         public ActionResult SignInForJson(LoginUserModel model)
         {
@@ -67,6 +65,7 @@ namespace Candy.Core.Controllers
                 });
             }
         }
+
         public ActionResult SignOut()
         {
             this._authenticationService.SignOut();
@@ -77,6 +76,7 @@ namespace Candy.Core.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult Register(RegisterUserModel model)
         {

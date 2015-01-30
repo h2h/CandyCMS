@@ -3,10 +3,10 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Candy.Framework.Configuration;
-using Candy.Framework.Mvc.Routes;
-using Candy.Framework.Themes;
 using Candy.Framework.Infrastructure;
 using Candy.Framework.Localization;
+using Candy.Framework.Mvc.Routes;
+using Candy.Framework.Themes;
 
 namespace Candy.Web
 {
@@ -48,7 +48,6 @@ namespace Candy.Web
             if (config.IsInstalled)
             {
             }
-
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)
@@ -58,27 +57,22 @@ namespace Candy.Web
 
         protected void Session_Start(object sender, EventArgs e)
         {
-
         }
 
         protected void Application_AuthenticateRequest(object sender, EventArgs e)
         {
-
         }
 
         protected void Application_Error(object sender, EventArgs e)
         {
-
         }
 
         protected void Session_End(object sender, EventArgs e)
         {
-
         }
 
         protected void Application_End(object sender, EventArgs e)
         {
-
         }
     }
 }

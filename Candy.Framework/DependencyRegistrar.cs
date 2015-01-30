@@ -1,26 +1,20 @@
 ﻿using System;
-using System.Web;
-using System.Linq;
-using System.Text;
-using System.Reflection;
-using System.Threading.Tasks;
 using System.Collections.Generic;
-
+using System.Linq;
+using System.Reflection;
+using System.Web;
 using Autofac;
 using Autofac.Core;
-using Autofac.Builder;
 using Autofac.Integration.Mvc;
-
-using Candy.Framework.Data;
-using Candy.Framework.Fakes;
-using Candy.Framework.Data.EF;
-using Candy.Framework.Themes;
-using Candy.Framework.Plugins;
-using Candy.Framework.Mvc.Routes;
+using Candy.Framework.Caching;
 using Candy.Framework.Configuration;
+using Candy.Framework.Data;
+using Candy.Framework.Data.EF;
+using Candy.Framework.Fakes;
 using Candy.Framework.Infrastructure;
 using Candy.Framework.Infrastructure.DependencyManagement;
-using Candy.Framework.Caching;
+using Candy.Framework.Mvc.Routes;
+using Candy.Framework.Themes;
 
 namespace Candy.Framework
 {
@@ -78,7 +72,7 @@ namespace Candy.Framework
 
     public class SettingsSource : IRegistrationSource
     {
-        static readonly MethodInfo BuildMethod = typeof(SettingsSource).GetMethod("BuildRegistration", BindingFlags.Static | BindingFlags.NonPublic);
+        private static readonly MethodInfo BuildMethod = typeof(SettingsSource).GetMethod("BuildRegistration", BindingFlags.Static | BindingFlags.NonPublic);
 
         public IEnumerable<IComponentRegistration> RegistrationsFor(Service service, Func<Service, IEnumerable<IComponentRegistration>> registrations)
         {
@@ -90,6 +84,7 @@ namespace Candy.Framework
                 yield return (IComponentRegistration)buildMethod.Invoke(null, null);
             }
         }
+
         public bool IsAdapterForIndividualComponents { get { return false; } }
     }
 }

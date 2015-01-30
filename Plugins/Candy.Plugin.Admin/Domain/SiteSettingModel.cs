@@ -1,7 +1,5 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using System.Globalization;
-using System.Collections.Generic;
-
 using Candy.Core.Domain;
 
 namespace Candy.Plugin.Admin.Domain
@@ -14,6 +12,7 @@ namespace Candy.Plugin.Admin.Domain
         }
 
         public SiteSettings SiteSettings { get; set; }
+
         public IList<CultureInfo> Cultures { get; set; }
     }
 }

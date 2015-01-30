@@ -8,6 +8,7 @@ namespace Candy.Framework
     public partial class WebHelper : IWebHelper
     {
         private readonly HttpContextBase _httpContext;
+
         public WebHelper(HttpContextBase httpContext)
         {
             this._httpContext = httpContext;

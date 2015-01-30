@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Linq;
-using System.Reflection;
-using System.Linq.Expressions;
 using System.Collections.Generic;
-
+using System.Linq;
+using System.Linq.Expressions;
+using System.Reflection;
 using Candy.Core.Domain;
-
 using Candy.Framework;
-using Candy.Framework.Data;
 using Candy.Framework.Caching;
 using Candy.Framework.Configuration;
+using Candy.Framework.Data;
 
 namespace Candy.Core.Services
 {
@@ -57,6 +55,7 @@ namespace Candy.Core.Services
 
             return _settingRepository.GetById(settingId);
         }
+
         public void DeleteSetting(Setting setting)
         {
             if (setting == null)
@@ -64,6 +63,7 @@ namespace Candy.Core.Services
 
             _settingRepository.Delete(setting);
         }
+
         public Setting GetSetting(string key)
         {
             if (string.IsNullOrEmpty(key))
@@ -82,10 +82,12 @@ namespace Candy.Core.Services
 
             return null;
         }
+
         public virtual IList<Setting> GetAllSettings()
         {
             return _settingRepository.Table.ToList();
         }
+
         public virtual T GetSettingByKey<T>(string key, T defaultValue = default(T))
         {
             if (string.IsNullOrEmpty(key))
@@ -102,6 +104,7 @@ namespace Candy.Core.Services
             }
             return defaultValue;
         }
+
         public virtual T LoadSetting<T>() where T : ISettings, new()
         {
             var settings = Activator.CreateInstance<T>();
@@ -128,6 +131,7 @@ namespace Candy.Core.Services
             }
             return settings;
         }
+
         public virtual void SaveSetting<T>(T settings) where T : ISettings, new()
         {
             foreach (var prop in typeof(T).GetProperties())
@@ -142,7 +146,7 @@ namespace Candy.Core.Services
                 // 因为 C# 不支持 Duck typing ， 所以这里使用 Dynamic
                 dynamic value = prop.GetValue(settings, null);
                 if (value != null)
-                    SetSetting(key, value,  false);
+                    SetSetting(key, value, false);
                 else
                     SetSetting(key, "", false);
             }
@@ -150,6 +154,7 @@ namespace Candy.Core.Services
             //清除缓存
             ClearCache();
         }
+
         public virtual void SaveSetting<T, TPropType>(T settings, Expression<Func<T, TPropType>> keySelector, bool clearCache = true) where T : ISettings, new()
         {
             var member = keySelector.Body as MemberExpression;
@@ -172,6 +177,7 @@ namespace Candy.Core.Services
             else
                 SetSetting(key, "", clearCache);
         }
+
         public virtual void SetSetting<T>(string key, T value, bool clearCache = true)
         {
             if (key == null)
@@ -201,9 +207,9 @@ namespace Candy.Core.Services
                 InsertSetting(setting, clearCache);
             }
         }
+
         public virtual void UpdateSetting(Setting setting, bool clearCache = true)
         {
-
             if (setting == null)
                 throw new ArgumentNullException("setting");
 
@@ -213,6 +219,7 @@ namespace Candy.Core.Services
             if (clearCache)
                 _cacheManager.RemoveByPattern(SETTINGS_PATTERN_KEY);
         }
+
         public virtual void InsertSetting(Setting setting, bool clearCache = true)
         {
             if (setting == null)

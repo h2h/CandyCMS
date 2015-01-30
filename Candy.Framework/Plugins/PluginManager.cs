@@ -1,19 +1,17 @@
 ﻿using System;
-using System.IO;
-using System.Web;
-using System.Linq;
-using System.Threading;
-using System.Reflection;
-using System.Web.Hosting;
-using System.Web.Compilation;
 using System.Collections.Generic;
-
-using Newtonsoft.Json;
-
-using Candy.Framework.Plugins;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Threading;
+using System.Web;
+using System.Web.Compilation;
+using System.Web.Hosting;
 using Candy.Framework.ComponentModel;
+using Candy.Framework.Plugins;
 
 [assembly: PreApplicationStartMethod(typeof(PluginManager), "Initialize")]
+
 namespace Candy.Framework.Plugins
 {
     public class PluginManager
@@ -64,7 +62,7 @@ namespace Candy.Framework.Plugins
 
                         if (string.IsNullOrWhiteSpace(pluginDescriptor.Name))
                             throw new Exception(string.Format("A plugin '{0}' has no system name. Try assigning the plugin a unique name and recompiling.", descriptionFile.FullName));
-                        
+
                         if (referencedPlugins.Contains(pluginDescriptor))
                             throw new Exception(string.Format("A plugin with '{0}' system name is already defined", pluginDescriptor.Name));
 
@@ -121,6 +119,7 @@ namespace Candy.Framework.Plugins
                 IncompatiblePlugins = incompatiblePlugins;
             }
         }
+
         /// <summary>
         /// 获取插件描述信息
         /// </summary>
@@ -146,6 +145,7 @@ namespace Candy.Framework.Plugins
             result.Sort((firstPair, nextPair) => firstPair.Value.DisplayOrder.CompareTo(nextPair.Value.DisplayOrder));
             return result;
         }
+
         /// <summary>
         /// 确定该文件夹是否在插件文件夹下
         /// </summary>
@@ -158,6 +158,7 @@ namespace Candy.Framework.Plugins
             if (!folder.Parent.Name.Equals("Plugins", StringComparison.InvariantCultureIgnoreCase)) return false;
             return true;
         }
+
         /// <summary>
         /// 获取已安装插件列表保存路径
         /// </summary>
@@ -166,6 +167,7 @@ namespace Candy.Framework.Plugins
         {
             return HostingEnvironment.MapPath(InstalledPluginsFilePath);
         }
+
         /// <summary>
         /// 插件文件是否已经加载
         /// </summary>
@@ -190,6 +192,7 @@ namespace Candy.Framework.Plugins
             }
             return false;
         }
+
         /// <summary>
         /// 插件文件部署
         /// </summary>
@@ -222,6 +225,7 @@ namespace Candy.Framework.Plugins
 
             return shadowCopiedAssembly;
         }
+
         /// <summary>
         /// 初始化插件 Full Trust
         /// </summary>
@@ -250,6 +254,7 @@ namespace Candy.Framework.Plugins
             }
             return shadowCopiedPlugin;
         }
+
         /// <summary>
         /// 初始化插件 Medium Trust
         /// </summary>
@@ -297,6 +302,7 @@ namespace Candy.Framework.Plugins
             }
             return shadowCopiedPlugin;
         }
+
         /// <summary>
         /// 标记已安装的插件
         /// </summary>
@@ -315,12 +321,13 @@ namespace Candy.Framework.Plugins
             var installedPluginSystemNames = PluginFileParser.ParseInstalledPluginsFile(GetInstalledPluginsFilePath());
             bool alreadyMarkedAsInstalled = installedPluginSystemNames
                                 .FirstOrDefault(x => x.Equals(pluginFileName, StringComparison.InvariantCultureIgnoreCase)) != null;
-            
+
             if (!alreadyMarkedAsInstalled)
                 installedPluginSystemNames.Add(pluginFileName);
 
             PluginFileParser.SaveInstalledPluginsFile(installedPluginSystemNames, filePath);
         }
+
         /// <summary>
         /// 标记已卸载的插件
         /// </summary>

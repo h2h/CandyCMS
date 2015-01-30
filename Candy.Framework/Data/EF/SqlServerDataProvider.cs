@@ -1,11 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data.Common;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.IO;
 using System.Text;
-using System.Data.Common;
 using System.Web.Hosting;
-using System.Data.Entity;
-using System.Collections.Generic;
-using System.Data.Entity.Infrastructure;
 
 namespace Candy.Framework.Data.EF
 {
@@ -20,7 +20,6 @@ namespace Candy.Framework.Data.EF
 
                 return new string[0];
             }
-
 
             var statements = new List<string>();
             using (var stream = File.OpenRead(filePath))
@@ -59,13 +58,15 @@ namespace Candy.Framework.Data.EF
 
             return sb.ToString();
         }
+
         public virtual void InitConnectionFactory()
         {
             var connectionFactory = new SqlConnectionFactory();
 
-            #pragma warning disable 0618
+#pragma warning disable 0618
             Database.DefaultConnectionFactory = connectionFactory;
         }
+
         public virtual void SetDatabaseInitializer()
         {
             var tablesToValidate = new[] { "Settings" };
@@ -77,12 +78,13 @@ namespace Candy.Framework.Data.EF
 
             var initializer = new CreateTablesIfNotExist<CandyObjectContext>(tablesToValidate, customCommands.ToArray());
             Database.SetInitializer(initializer);
-
         }
+
         public virtual DbParameter GetParameter()
         {
             return null;
         }
+
         public virtual bool StoredProceduredSupported
         {
             get
@@ -90,11 +92,11 @@ namespace Candy.Framework.Data.EF
                 return true;
             }
         }
+
         public virtual void InitDatabase()
         {
             InitConnectionFactory();
             SetDatabaseInitializer();
         }
-
     }
 }

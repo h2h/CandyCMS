@@ -10,13 +10,14 @@ namespace Candy.Plugin.Install
         {
             get { return "Candy.Plugin.Install"; }
         }
+
         public void RegisterRoutes(RouteCollection routes)
         {
             // 安装路由
             routes.MapRoute(
                 "Candy.Plugin.Install.Install.Route",               // 路由名称
                 "Install",                                          // 路由 URL
-                new { controller = "Install", action = "Index"},    // 默认配置
+                new { controller = "Install", action = "Index" },    // 默认配置
                 new[] { "Candy.Plugin.Install.Controllers" },       // 命名空间
                 AreaName                                            // Area Name 必须
             );

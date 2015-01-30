@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
-using Candy.Framework.Themes;
 using Candy.Framework.Infrastructure;
+using Candy.Framework.Themes;
 using Candy.Framework.Utility.Extensions;
 
 namespace Candy.Framework.Mvc.Extensions
@@ -14,6 +14,7 @@ namespace Candy.Framework.Mvc.Extensions
             var baseUrl = MakeAbsolute(urlHelper, string.Format("~/Themes/{0}/", themeContext.WorkingThemeName));
             return MakeAbsolute(urlHelper, url, baseUrl);
         }
+
         public static string AbsoluteAction(this UrlHelper urlHelper, Func<string> urlAction)
         {
             return string.Empty;

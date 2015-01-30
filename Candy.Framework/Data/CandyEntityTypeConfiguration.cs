@@ -8,6 +8,7 @@ namespace Candy.Framework.Data
         {
             PostInitialize();
         }
+
         protected virtual void PostInitialize()
         { }
     }

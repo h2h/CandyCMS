@@ -1,14 +1,12 @@
-﻿using System;
-using Candy.Framework.Configuration;
-using Candy.Framework.Data;
+﻿using Candy.Framework.Configuration;
 
 namespace Candy.Framework.Data.EF
 {
     public partial class EfDataProviderManager : BaseDataProviderManager
     {
         public EfDataProviderManager(CandyConfig config)
-            :base(config)
-        { 
+            : base(config)
+        {
         }
 
         public override IDataProvider LoadDataProvider()
@@ -21,6 +19,7 @@ namespace Candy.Framework.Data.EF
             {
                 case "sqlserver":
                     return new SqlServerDataProvider();
+
                 default:
                     throw new CandyException(string.Format("Not supported dataprovider name: {0}", providerName));
             }

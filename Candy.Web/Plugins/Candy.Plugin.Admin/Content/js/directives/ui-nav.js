@@ -56,7 +56,6 @@
                 $('.smart').length && $('<div class="dropdown-backdrop"/>').insertAfter('.app-aside').on('click', function (next) {
                     next && next.trigger('mouseleave.nav');
                 });
-
             });
 
             wrap.on('mouseleave', function (e) {

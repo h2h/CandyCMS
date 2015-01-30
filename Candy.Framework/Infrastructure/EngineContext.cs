@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Configuration;
 using Candy.Framework.Configuration;
 
@@ -10,7 +6,6 @@ namespace Candy.Framework.Infrastructure
 {
     public class EngineContext
     {
-
         /// <summary>
         /// 初始化
         /// </summary>
@@ -35,10 +30,10 @@ namespace Candy.Framework.Infrastructure
 
                 if (engineType == null)
                     throw new ConfigurationErrorsException("The type '" + config.EngineType + "' could not be found. Please check the configuration at /configuration/nop/engine[@engineType] or check for missing assemblies.");
-                
+
                 if (!typeof(IEngine).IsAssignableFrom(engineType))
                     throw new ConfigurationErrorsException("The type '" + engineType + "' doesn't implement 'Nop.Core.Infrastructure.IEngine' and cannot be configured in /configuration/nop/engine[@engineType] for that purpose.");
-                
+
                 return Activator.CreateInstance(engineType) as IEngine;
             }
             return new CandyEngine();

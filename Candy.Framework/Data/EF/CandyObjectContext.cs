@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Common;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
-using System.Linq;
-using System.Reflection;
 using Candy.Framework.Configuration;
 using Candy.Framework.Infrastructure;
 
@@ -14,7 +9,7 @@ namespace Candy.Framework.Data.EF
     public class CandyObjectContext : DbContext, IDbContext
     {
         public CandyObjectContext(CandyConfig config)
-            :base(config.ConnectionString)
+            : base(config.ConnectionString)
         {
         }
 

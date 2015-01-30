@@ -1,18 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Candy.Framework.Caching
 {
     public static class CacheExtensions
     {
         private static readonly object _syncObject = new object();
+
         public static T Get<T>(this ICacheManager cacheManager, string key, Func<T> acquire)
         {
             return Get(cacheManager, key, 60, acquire);
         }
+
         public static T Get<T>(this ICacheManager cacheManager, string key, int cacheTime, Func<T> acquire)
         {
             lock (_syncObject)

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
-using System.Collections.Generic;
 
 using Candy.Core.Domain;
 using Candy.Core.Services;
@@ -22,6 +19,7 @@ namespace Candy.Plugin.Admin.Controllers
             this._settingService = settingService;
             this._languageService = languageService;
         }
+
         public ActionResult Index()
         {
             var viewModel = new SiteSettingModel();
@@ -29,6 +27,7 @@ namespace Candy.Plugin.Admin.Controllers
             viewModel.Cultures = this._languageService.GetAllCultureInfo().ToList();
             return View(viewModel);
         }
+
         [HttpPost]
         public ActionResult Base(SiteSettings model)
         {
@@ -37,5 +36,5 @@ namespace Candy.Plugin.Admin.Controllers
             _settingService.ClearCache();
             return RedirectToAction("Index");
         }
-	}
+    }
 }

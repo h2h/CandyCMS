@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Xml;
 using System.Configuration;
+using System.Xml;
 
 namespace Candy.Framework.Configuration
 {
@@ -32,7 +32,6 @@ namespace Candy.Framework.Configuration
                 var ignoreStartupTasks = startupNode.Attributes["IgnoreStartupTasks"];
                 if (ignoreStartupTasks != null)
                     config.IgnoreStartupTasks = Convert.ToBoolean(ignoreStartupTasks.Value);
-
             }
 
             var applicationNode = section.SelectSingleNode("Application");
@@ -69,13 +68,21 @@ namespace Candy.Framework.Configuration
 
             return config;
         }
+
         public string EngineType { get; private set; }
+
         public bool DynamicDiscovery { get; private set; }
+
         public bool IgnoreStartupTasks { get; private set; }
+
         public string ThemeBasePath { get; private set; }
+
         public bool IsInstalled { get; private set; }
+
         public string Version { get; private set; }
+
         public string DataProviderName { get; private set; }
+
         public string ConnectionString { get; private set; }
     }
 }

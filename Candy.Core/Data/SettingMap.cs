@@ -1,5 +1,5 @@
-﻿using Candy.Framework.Data;
-using Candy.Core.Domain;
+﻿using Candy.Core.Domain;
+using Candy.Framework.Data;
 
 namespace Candy.Core.Data
 {

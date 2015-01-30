@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Candy.Framework.Themes
 {
@@ -12,6 +9,7 @@ namespace Candy.Framework.Themes
 
         private bool _themeIsCached;
         private string _cachedThemeName;
+
         public ThemeContext(IThemeProvider themeProvider)
         {
             this._themeProvider = themeProvider;

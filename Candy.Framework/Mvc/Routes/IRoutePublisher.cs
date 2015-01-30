@@ -2,7 +2,6 @@
 
 namespace Candy.Framework.Mvc.Routes
 {
-
     public interface IRoutePublisher
     {
         /// <summary>

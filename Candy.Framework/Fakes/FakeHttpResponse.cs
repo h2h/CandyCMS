@@ -6,10 +6,12 @@ namespace Candy.Framework.Fakes
     public class FakeHttpResponse : HttpResponseBase
     {
         private readonly HttpCookieCollection _cookies;
+
         public FakeHttpResponse()
         {
             this._cookies = new HttpCookieCollection();
         }
+
         private readonly StringBuilder _outputString = new StringBuilder();
 
         public string ResponseOutput

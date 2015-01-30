@@ -19,19 +19,23 @@ namespace Candy.Framework.Caching
         {
             return (T)Cache[key];
         }
+
         public virtual void Remove(string key)
         {
             Cache.Remove(key);
         }
+
         public virtual void Clear()
         {
             foreach (var item in Cache)
                 Cache.Remove(item.Key);
         }
+
         public virtual bool IsSet(string key)
         {
             return (Cache.Contains(key));
         }
+
         public virtual void Set(string key, object data, int cacheTime)
         {
             if (data == null)
@@ -41,6 +45,7 @@ namespace Candy.Framework.Caching
             policy.AbsoluteExpiration = DateTime.Now + TimeSpan.FromMinutes(cacheTime);
             Cache.Add(new CacheItem(key, data), policy);
         }
+
         public virtual void RemoveByPattern(string pattern)
         {
             var regex = new Regex(pattern, RegexOptions.Singleline | RegexOptions.Compiled | RegexOptions.IgnoreCase);
@@ -55,6 +60,5 @@ namespace Candy.Framework.Caching
                 Remove(key);
             }
         }
-
     }
 }

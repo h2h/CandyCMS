@@ -1,12 +1,11 @@
-﻿using System;
-using Candy.Framework.Configuration;
+﻿using Candy.Framework.Configuration;
 
 namespace Candy.Framework.Data.DbWrench
 {
     public partial class DbWrenchDataProviderManager : BaseDataProviderManager
     {
         public DbWrenchDataProviderManager(CandyConfig config)
-            :base(config)
+            : base(config)
         { }
 
         public override IDataProvider LoadDataProvider()
@@ -20,6 +19,7 @@ namespace Candy.Framework.Data.DbWrench
             {
                 case "sqlserver":
                     return new SqlServerDataProvider();
+
                 default:
                     throw new CandyException(string.Format("Not supported dataprovider name: {0}", providerName));
             }

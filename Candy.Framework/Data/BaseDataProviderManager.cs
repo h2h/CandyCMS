@@ -14,6 +14,7 @@ namespace Candy.Framework.Data
         }
 
         protected CandyConfig Config { get; private set; }
+
         public abstract IDataProvider LoadDataProvider();
     }
 }

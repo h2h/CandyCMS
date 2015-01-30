@@ -67,7 +67,6 @@ namespace Candy.Framework.Utility.Extensions
             return string.Format("{0}://{1}{2}", request.Url.Scheme, request.Headers["Host"], request.RawUrl);
         }
 
-
         /// <summary>
         /// Returns wether the specified url is local to the host or not
         /// </summary>
@@ -76,7 +75,6 @@ namespace Candy.Framework.Utility.Extensions
         /// <returns></returns>
         public static bool IsLocalUrl(this HttpRequestBase request, string url)
         {
-
             if (string.IsNullOrWhiteSpace(url))
             {
                 return false;
@@ -109,7 +107,6 @@ namespace Candy.Framework.Utility.Extensions
                 // mall-formed url e.g, "abcdef"
                 return false;
             }
-
         }
     }
 }

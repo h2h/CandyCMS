@@ -10,6 +10,7 @@ namespace Candy.Plugin.Admin
         {
             get { return "Candy.Plugin.Admin"; }
         }
+
         public void RegisterRoutes(RouteCollection routes)
         {
             var route = routes.MapRoute(

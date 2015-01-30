@@ -16,6 +16,7 @@ namespace Candy.Core.Extensions
             else
                 return localeResource.Value;
         }
+
         public static string Lang(this HtmlHelper htmlHelper, string text, params object[] args)
         {
             var localizedService = EngineContext.Current.Resolve<ILocalizationService>();

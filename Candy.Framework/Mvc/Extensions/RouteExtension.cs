@@ -19,6 +19,7 @@ namespace Candy.Framework.Mvc.Extensions
             }
             return null;
         }
+
         public static string GetAreaName(this RouteData routeData)
         {
             object area;

@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Web;
-using System.Web.Mvc;
-using System.Data.Entity;
 using System.Web.Routing;
-
 using Candy.Core.Services;
-
-using Candy.Framework.Mvc.Extensions;
 using Candy.Framework.Configuration;
 using Candy.Framework.Infrastructure;
+using Candy.Framework.Mvc.Extensions;
 
 namespace Candy.Plugin.Install
 {

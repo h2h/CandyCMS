@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-
-using Candy.Core.Domain;
-using Candy.Framework.Localization;
+﻿using Candy.Framework.Localization;
 
 namespace Candy.Core.Services
 {

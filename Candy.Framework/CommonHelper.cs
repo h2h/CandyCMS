@@ -9,6 +9,7 @@ namespace Candy.Framework
     public partial class CommonHelper
     {
         private static AspNetHostingPermissionLevel? _trustLevel;
+
         public static AspNetHostingPermissionLevel GetTrustLevel()
         {
             if (!_trustLevel.HasValue)
@@ -50,6 +51,7 @@ namespace Candy.Framework
 
             return TypeDescriptor.GetConverter(type);
         }
+
         public static object To(object value, Type destinationType)
         {
             if (value != null)
@@ -78,6 +80,5 @@ namespace Candy.Framework
         {
             return (T)To(value, typeof(T));
         }
-
     }
 }

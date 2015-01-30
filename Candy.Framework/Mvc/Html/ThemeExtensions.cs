@@ -1,5 +1,4 @@
 ﻿using System.Web.Mvc;
-using System.Web.Mvc.Html;
 using Candy.Framework.Themes;
 
 namespace Candy.Framework.Mvc.Html

@@ -1,7 +1,6 @@
 ﻿'use strict';
 
 angular.module('ui.jq', ['ui.load']).value('uiJqConfig', {
-
 }).directive('uiJq', ['uiJqConfig', 'JQ_CONFIG', 'uiLoad', '$timeout', function uiJqInjectingFunction(uiJqConfig, JQ_CONFIG, uiLoad, $timeout) {
     return {
         restrict: 'A',
@@ -13,7 +12,6 @@ angular.module('ui.jq', ['ui.load']).value('uiJqConfig', {
             var options = uiJqConfig && uiJqConfig[tAttrs.uiJq];
 
             return function uiJqLinkingFunction(scope, elm, attrs) {
-
                 function getOptions() {
                     var linkOptions = [];
 

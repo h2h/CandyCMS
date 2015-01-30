@@ -1,24 +1,10 @@
 ﻿'use strict';
 
 app.controller('UserProfileCtrl', ['$scope', function ($scope) {
-
 }]);
 
-app.controller('UserListCtrl', ['$scope', function ($scope) {
-
-    $scope.entities = [{
-        "id": 1,
-        "UserName": "admin",
-        "NiceName": "Hubert",
-        "Email": "406175408@qq.com",
-        "LastLoginDate": "2014-01-19"
-    }, {
-        "id": 2,
-        "UserName": "test",
-        "NiceName": "Test User",
-        "Email": "36933056@qq.com",
-        "LastLoginDate": "2014-01-19"
-    }];
+app.controller('UserListCtrl', ['$scope', '$http', function ($scope, $http) {
+    $scope.entities = [];
 
     $scope.searchText = '';
     $scope.action = 0;
@@ -28,6 +14,19 @@ app.controller('UserListCtrl', ['$scope', function ($scope) {
         if (action == 'add' & $scope.selected.indexOf(id) == -1) $scope.selected.push(id);
         if (action == 'remove' && $scope.selected.indexOf(id) != -1) $scope.selected.splice($scope.selected.indexOf(id), 1);
     }
+
+    var getPagedDataAsync = function (pageSize, pageIndex) {
+        setTimeout(function () {
+            var data;
+            $http.get('/Admin/User/List?pageSize=' + pageSize + '&pageIndex=' + pageIndex).success(function (result) {
+                $scope.entities = result;
+            }).error(function () {
+                console.log("请求发生错误");
+            });
+        }, 100);
+    }
+
+    getPagedDataAsync(10, 0);
 
     $scope.updateSelection = function ($event, id) {
         var checkbox = $event.target;
@@ -63,8 +62,7 @@ app.controller('UserListCtrl', ['$scope', function ($scope) {
 
     $scope.Excute = function () {
         console.log($scope.action);
-        if ($scope.action == 1)
-        {
+        if ($scope.action == 1) {
             removeEntity();
         }
     }
@@ -72,5 +70,4 @@ app.controller('UserListCtrl', ['$scope', function ($scope) {
     var removeEntity = function () {
         console.log('删除数据');
     }
-
 }]);

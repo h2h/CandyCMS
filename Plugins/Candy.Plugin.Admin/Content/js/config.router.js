@@ -45,7 +45,7 @@ angular.module('app').run(
             })
 		    .state('admin.users.list', {
 		        url: '/list',
-                templateUrl:'/Admin/User/'
+		        templateUrl: '/Admin/User/'
 		    });
 		}
 	]

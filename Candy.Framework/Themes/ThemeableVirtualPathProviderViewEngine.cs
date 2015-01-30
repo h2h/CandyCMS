@@ -1,11 +1,10 @@
-﻿using System.Web.Mvc;
-using System;
-using Candy.Framework.Infrastructure;
-using System.Web.Routing;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
+using Candy.Framework.Infrastructure;
 using Candy.Framework.Mvc.Extensions;
 
 namespace Candy.Framework.Themes
@@ -13,10 +12,12 @@ namespace Candy.Framework.Themes
     public abstract class ThemeableVirtualPathProviderViewEngine : VirtualPathProviderViewEngine
     {
         internal Func<string, string> GetExtensionThunk;
+
         protected ThemeableVirtualPathProviderViewEngine()
         {
             GetExtensionThunk = new Func<string, string>(VirtualPathUtility.GetExtension);
         }
+
         protected virtual string GetPath(ControllerContext controllerContext, string[] locations, string[] areaLocations, string locationsPropertyName, string name, string controllerName, string theme, string cacheKeyPrefix, bool useCache, out string[] searchedLocations)
         {
             searchedLocations = null;
@@ -58,6 +59,7 @@ namespace Candy.Framework.Themes
             string str = this.GetExtensionThunk(virtualPath).TrimStart(new[] { '.' });
             return this.FileExtensions.Contains(str, StringComparer.OrdinalIgnoreCase);
         }
+
         protected virtual string GetPathFromSpecificName(ControllerContext controllerContext, string name, string cacheKey, ref string[] searchedLocations)
         {
             string virtualPath = name;
@@ -88,6 +90,7 @@ namespace Candy.Framework.Themes
             }
             return virtualPath;
         }
+
         protected virtual bool IsSpecificPath(string name)
         {
             char ch = name[0];
@@ -97,7 +100,7 @@ namespace Candy.Framework.Themes
             }
             return true;
         }
-       
+
         /// <summary>
         /// 获取当前使用主题
         /// </summary>
@@ -107,10 +110,12 @@ namespace Candy.Framework.Themes
             var themeContext = EngineContext.Current.Resolve<IThemeContext>();
             return themeContext.WorkingThemeName;
         }
+
         protected virtual string CreateCacheKey(string prefix, string name, string controllerName, string areaName, string theme)
         {
             return string.Format(CultureInfo.InvariantCulture, ":ViewCacheEntry:{0}:{1}:{2}:{3}:{4}:{5}", new object[] { base.GetType().AssemblyQualifiedName, prefix, name, controllerName, areaName, theme });
         }
+
         protected virtual List<ViewLocation> GetViewLocations(string[] viewLocationFormats, string[] areaViewLocationFormats)
         {
             var list = new List<ViewLocation>();
@@ -124,6 +129,7 @@ namespace Candy.Framework.Themes
             }
             return list;
         }
+
         /// <summary>
         /// 查找主题视图
         /// </summary>
@@ -158,6 +164,7 @@ namespace Candy.Framework.Themes
             }
             return new ViewEngineResult(strArray.Union(strArray2));
         }
+
         protected virtual ViewEngineResult FindThemeablePartialView(ControllerContext controllerContext, string partialViewName, bool useCache)
         {
             string[] strArray;
@@ -177,7 +184,6 @@ namespace Candy.Framework.Themes
                 return new ViewEngineResult(strArray);
             }
             return new ViewEngineResult(this.CreatePartialView(controllerContext, str2), this);
-
         }
 
         public override ViewEngineResult FindView(ControllerContext controllerContext, string viewName, string masterName, bool useCache)
@@ -185,6 +191,7 @@ namespace Candy.Framework.Themes
             ViewEngineResult result = FindThemeableView(controllerContext, viewName, masterName, useCache);
             return result;
         }
+
         public override ViewEngineResult FindPartialView(ControllerContext controllerContext, string partialViewName, bool useCache)
         {
             ViewEngineResult result = FindThemeablePartialView(controllerContext, partialViewName, useCache);

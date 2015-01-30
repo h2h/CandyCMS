@@ -6,12 +6,12 @@
     font-family: Helvetica Neue,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,sans-serif;
     /*background:url(../img/install-bg.jpg) center center;*/
 }
-/* 
- * Scroller v3.1.0 - 2014-10-27 
- * A jQuery plugin for replacing default browser scrollbars. Part of the Formstone Library. 
- * http://formstone.it/scroller/ 
- * 
- * Copyright 2014 Ben Plum; MIT Licensed 
+/*
+ * Scroller v3.1.0 - 2014-10-27
+ * A jQuery plugin for replacing default browser scrollbars. Part of the Formstone Library.
+ * http://formstone.it/scroller/
+ *
+ * Copyright 2014 Ben Plum; MIT Licensed
  */
 
 .scroller {
@@ -111,7 +111,6 @@
 .scroller-setup .scroller-bar, .scroller-active .scroller-bar {
     display: block;
 }
-
 
 /* Install Page Start */
 

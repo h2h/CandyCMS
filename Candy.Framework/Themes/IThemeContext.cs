@@ -1,5 +1,4 @@
-﻿using System;
-namespace Candy.Framework.Themes
+﻿namespace Candy.Framework.Themes
 {
     public interface IThemeContext
     {

@@ -16,8 +16,8 @@ namespace Candy.Framework.Themes
         {
             _basePath = webHelper.MapPath(config.ThemeBasePath);
             LoadDescriptions();
-
         }
+
         private void LoadDescriptions()
         {
             //TODO:Use IFileStorage?
@@ -42,14 +42,17 @@ namespace Candy.Framework.Themes
 
             return null;
         }
+
         public ThemeDescriptor GetThemeDescriptor(string themePackage)
         {
             return _themeDescriptions.SingleOrDefault(x => x.PackageName.Equals(themePackage, StringComparison.InvariantCultureIgnoreCase));
         }
+
         public IList<ThemeDescriptor> GetThemeDescriptions()
         {
             return _themeDescriptions;
         }
+
         public bool ThemeDescriptorExists(string themePackage)
         {
             return _themeDescriptions.Any(x => x.PackageName.Equals(themePackage, StringComparison.InvariantCultureIgnoreCase));

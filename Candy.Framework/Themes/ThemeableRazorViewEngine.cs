@@ -12,7 +12,7 @@ namespace Candy.Framework.Themes
                 //主题
                 "~/Themes/{2}.Theme/Views/{1}/{0}.cshtml",
                 "~/Themes/{2}.Theme/Views/Shared/{0}.cshtml",
-                                              
+
                 //默认
                 "~/Plugins/{2}/Views/{1}/{0}.cshtml",
                 "~/Plugins/{2}/Views/Shared/{0}.cshtml",
@@ -34,21 +34,20 @@ namespace Candy.Framework.Themes
                 //themes
                 "~/Themes/{2}.Theme/Views/{1}/{0}.cshtml",
                 "~/Themes/{2}.Theme/Views/Shared/{0}.cshtml",
-                                                    
+
                 //default
                 "~/Plugins/{2}/Views/{1}/{0}.cshtml",
                 "~/Plugins/{2}/Views/Shared/{0}.cshtml"
             };
 
-
             ViewLocationFormats = new[]
             {
-                "~/Themes/{2}/Views/{1}/{0}.cshtml", 
+                "~/Themes/{2}/Views/{1}/{0}.cshtml",
                 "~/Themes/{2}/Views/Shared/{0}.cshtml"
             };
             MasterLocationFormats = new[]
             {
-                "~/Themes/{2}/Views/{1}/{0}.cshtml", 
+                "~/Themes/{2}/Views/{1}/{0}.cshtml",
                 "~/Themes/{2}/Views/Shared/{0}.cshtml"
             };
             PartialViewLocationFormats = new[]
@@ -58,7 +57,6 @@ namespace Candy.Framework.Themes
             };
 
             FileExtensions = new[] { "cshtml" };
-            
         }
 
         protected override IView CreatePartialView(ControllerContext controllerContext, string partialPath)

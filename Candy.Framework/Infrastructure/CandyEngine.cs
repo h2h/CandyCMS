@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Web.Mvc;
 using Autofac;
 using Autofac.Integration.Mvc;
 
-using Candy.Framework.Plugins;
-using Candy.Framework.Localization;
 using Candy.Framework.Configuration;
 using Candy.Framework.Infrastructure.DependencyManagement;
 
@@ -16,6 +13,7 @@ namespace Candy.Framework.Infrastructure
     public class CandyEngine : IEngine
     {
         private ContainerManager _containerManager;
+
         public ContainerManager ContainerManager
         {
             get { return _containerManager; }
@@ -28,18 +26,19 @@ namespace Candy.Framework.Infrastructure
         {
             var typeFinder = _containerManager.Resolve<ITypeFinder>();
             var startUpTaskTypes = typeFinder.FindClassesOfType<IStartupTask>();
-            
+
             var startUpTasks = new List<IStartupTask>();
             foreach (var startUpTaskType in startUpTaskTypes)
                 startUpTasks.Add((IStartupTask)Activator.CreateInstance(startUpTaskType));
-            
+
             //排序
             startUpTasks = startUpTasks.AsQueryable().OrderBy(st => st.Order).ToList();
-            
+
             // 执行所有任务
             foreach (var startUpTask in startUpTasks)
                 startUpTask.Execute();
         }
+
         /// <summary>
         /// 运行请求开始任务
         /// </summary>
@@ -90,7 +89,6 @@ namespace Candy.Framework.Infrastructure
             foreach (var dependencyRegistrar in drInstances)
                 dependencyRegistrar.Register(builder, typeFinder);
             builder.Update(container);
-
 
             this._containerManager = new ContainerManager(container);
 

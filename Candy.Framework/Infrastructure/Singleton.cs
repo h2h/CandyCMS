@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Candy.Framework.Infrastructure
 {
     public class Singleton<T> : Singleton
     {
-        static T instance;
+        private static T instance;
 
         public static T Instance
         {
@@ -57,6 +54,7 @@ namespace Candy.Framework.Infrastructure
             get { return Singleton<Dictionary<TKey, TValue>>.Instance; }
         }
     }
+
     public class Singleton
     {
         static Singleton()
@@ -64,7 +62,7 @@ namespace Candy.Framework.Infrastructure
             allSingletons = new Dictionary<Type, object>();
         }
 
-        static readonly IDictionary<Type, object> allSingletons;
+        private static readonly IDictionary<Type, object> allSingletons;
 
         public static IDictionary<Type, object> AllSingletons
         {

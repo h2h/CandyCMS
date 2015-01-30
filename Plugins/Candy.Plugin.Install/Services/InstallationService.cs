@@ -11,17 +11,19 @@ namespace Candy.Plugin.Install.Services
     {
         private readonly IDbContext _dbContext;
         private readonly IWebHelper _webHelper;
+
         public InstallationService(IDbContext dbContext,
             IWebHelper webHelper)
         {
             this._dbContext = dbContext;
             this._webHelper = webHelper;
         }
+
         protected virtual void ExecuteSqlFile(string path)
         {
             var statements = new List<string>();
 
-            using(var stream = File.OpenRead(path))
+            using (var stream = File.OpenRead(path))
             using (var reader = new StreamReader(stream))
             {
                 string statement;
@@ -32,6 +34,7 @@ namespace Candy.Plugin.Install.Services
             foreach (var stmt in statements)
                 _dbContext.ExecuteSqlCommand(stmt);
         }
+
         protected virtual string ReadNextStatementFromStream(StreamReader reader)
         {
             var sb = new StringBuilder();
@@ -52,10 +55,12 @@ namespace Candy.Plugin.Install.Services
             }
             return sb.ToString();
         }
+
         protected virtual void UpdateDefaultUser(string email, string password, string username)
         {
 
         }
+
         public virtual void InstallData(string email, string password, string username, bool installSampleData = true)
         {
             // 添加必要配置数据

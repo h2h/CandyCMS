@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace Candy.Framework.Infrastructure
 {
@@ -26,14 +23,16 @@ namespace Candy.Framework.Infrastructure
             get { return loadAppDomainAssemblies; }
             set { loadAppDomainAssemblies = value; }
         }
+
         /// <summary>
-        /// 获取或设置不需要检索的 DLL 集合 
+        /// 获取或设置不需要检索的 DLL 集合
         /// </summary>
         public string AssemblySkipLoadingPattern
         {
             get { return assemblySkipLoadingPattern; }
             set { assemblySkipLoadingPattern = value; }
         }
+
         /// <summary>
         /// 获取或设置要查询 DLL 的条件，默认为匹配所有
         /// </summary>
@@ -42,6 +41,7 @@ namespace Candy.Framework.Infrastructure
             get { return assemblyRestrictToLoadingPattern; }
             set { assemblyRestrictToLoadingPattern = value; }
         }
+
         /// <summary>
         /// 获取或设置 AppDomain 中未加载的 DLL
         /// </summary>
@@ -58,6 +58,7 @@ namespace Candy.Framework.Infrastructure
         {
             get { return AppDomain.CurrentDomain; }
         }
+
         public IEnumerable<Type> FindClassesOfType<T>(bool onlyConcreteClasses = true)
         {
             return FindClassesOfType(typeof(T), onlyConcreteClasses);
@@ -92,9 +93,9 @@ namespace Candy.Framework.Infrastructure
                             throw;
                         }
                     }
-                    if(types == null)
+                    if (types == null)
                     {
-                    	continue;
+                        continue;
                     }
                     if (types != null)
                     {
@@ -125,6 +126,7 @@ namespace Candy.Framework.Infrastructure
             }
             return result;
         }
+
         /// <summary>
         /// 获取当前程序集
         /// </summary>
@@ -141,6 +143,7 @@ namespace Candy.Framework.Infrastructure
 
             return assemblies;
         }
+
         /// <summary>
         /// 循环 AppDomain 中的所有 DLL , 并添加到列表
         /// </summary>
@@ -157,6 +160,7 @@ namespace Candy.Framework.Infrastructure
                 }
             }
         }
+
         /// <summary>
         /// 添加特殊配置的 DLL
         /// </summary>
@@ -174,6 +178,7 @@ namespace Candy.Framework.Infrastructure
                 }
             }
         }
+
         /// <summary>
         /// 检查 DLL 是否需要加载
         /// </summary>
@@ -183,6 +188,7 @@ namespace Candy.Framework.Infrastructure
         {
             return !Matches(assemblyFullName, AssemblySkipLoadingPattern) && Matches(assemblyFullName, AssemblyRestrictToLoadingPattern);
         }
+
         /// <summary>
         /// 检查 DLL 是否需要加载
         /// </summary>
@@ -193,6 +199,7 @@ namespace Candy.Framework.Infrastructure
         {
             return Regex.IsMatch(assemblyFullName, pattern, RegexOptions.IgnoreCase | RegexOptions.Compiled);
         }
+
         /// <summary>
         /// 是否实现通用类型
         /// </summary>

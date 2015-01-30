@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Candy.Framework
+﻿namespace Candy.Framework
 {
     public abstract partial class BaseEntity
     {

@@ -1,6 +1,4 @@
-﻿
-
-var app = angular.module('app').config(
+﻿var app = angular.module('app').config(
     [
         '$controllerProvider', '$compileProvider', '$provide',
         function ($controllerProvider, $compileProvider, $provide) {

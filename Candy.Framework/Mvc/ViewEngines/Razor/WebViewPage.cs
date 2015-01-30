@@ -1,15 +1,8 @@
 ﻿using System;
 using System.IO;
-using System.Web;
-using System.Linq;
 using System.Web.Mvc;
-using System.Web.Routing;
-using System.Runtime.CompilerServices;
-
-using Candy.Framework.Localization;
-using Candy.Framework.Mvc.Extensions;
 using Candy.Framework.Infrastructure;
-using Candy.Framework.Configuration;
+using Candy.Framework.Mvc.Extensions;
 using Candy.Framework.Themes;
 
 namespace Candy.Framework.Mvc.ViewEngines.Razor
@@ -51,6 +44,7 @@ namespace Candy.Framework.Mvc.ViewEngines.Razor
 
             return MvcHtmlString.Create(style.ToString());
         }
+
         public MvcHtmlString Script(string path)
         {
             var areaName = ViewContext.RouteData.GetAreaName();
@@ -73,6 +67,7 @@ namespace Candy.Framework.Mvc.ViewEngines.Razor
 
             return MvcHtmlString.Create(script.ToString());
         }
+
         public override string Layout
         {
             get

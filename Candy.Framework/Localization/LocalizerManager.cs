@@ -1,16 +1,11 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
-using System.Web;
 using System.Linq;
 using System.Threading;
 using System.Web.Hosting;
-using System.Globalization;
-using System.Collections.Generic;
-
-using Candy.Framework.Plugins;
-using Candy.Framework.Localization;
 using Candy.Framework.ComponentModel;
-
+using Candy.Framework.Plugins;
 using Newtonsoft.Json;
 
 namespace Candy.Framework.Localization
@@ -21,10 +16,12 @@ namespace Candy.Framework.Localization
         private const string PluginsPath = "~/Plugins/";
 
         private static readonly ReaderWriterLockSlim Locker = new ReaderWriterLockSlim();
+
         /// <summary>
         /// 获取当前已加载语言包
         /// </summary>
         public static IEnumerable<Language> Languages { get; set; }
+
         public static void Initialize()
         {
             using (new WriteLockDisposable(Locker))
@@ -65,14 +62,14 @@ namespace Candy.Framework.Localization
 
                             if (loadedLanguages.Any(l => l.LanguageCulture == language.LanguageCulture))
                             {
-                                loadedLanguages.ForEach(l => {
+                                loadedLanguages.ForEach(l =>
+                                {
                                     if (l.LanguageCulture == language.LanguageCulture)
                                         l.InsertResources(language.LanguageResources.ToList());
                                 });
                             }
                             else
                                 loadedLanguages.Add(language);
-
                         }
                         catch
                         {

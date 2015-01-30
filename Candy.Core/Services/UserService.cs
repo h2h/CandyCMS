@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Linq;
-using System.Text;
-using System.Web.Security;
 using System.Security.Cryptography;
-
+using System.Text;
 using Candy.Core.Domain;
 using Candy.Framework.Data;
 
@@ -24,6 +22,7 @@ namespace Candy.Core.Services
             new RNGCryptoServiceProvider().GetBytes(data);
             return Convert.ToBase64String(data);
         }
+
         protected virtual string EncodePassword(string password, string salt)
         {
             byte[] bytes = Encoding.Unicode.GetBytes(password);
@@ -45,6 +44,7 @@ namespace Candy.Core.Services
         {
             this._userRepository.Insert(model);
         }
+
         public User GetByUserName(string username)
         {
             if (string.IsNullOrEmpty(username))
@@ -52,6 +52,7 @@ namespace Candy.Core.Services
 
             return this._userRepository.Table.Where(u => u.UserName.Equals(username)).FirstOrDefault();
         }
+
         public User GetByEmail(string email)
         {
             if (string.IsNullOrEmpty(email))
@@ -59,6 +60,7 @@ namespace Candy.Core.Services
 
             return this._userRepository.Table.Where(u => u.Email.Equals(email)).FirstOrDefault();
         }
+
         public void Register(RegisterUserModel model)
         {
             var user = new User();
@@ -70,6 +72,7 @@ namespace Candy.Core.Services
 
             Create(user);
         }
+
         public bool Validate(LoginUserModel model)
         {
             var user = new User();
@@ -86,6 +89,16 @@ namespace Candy.Core.Services
                 return true;
 
             return false;
+        }
+
+        public virtual IPagedList<User> GetAllUser(int pageIndex = 0, int pageSize = 2147483647)
+        {
+            var query = _userRepository.Table;
+
+            query = query.OrderByDescending(c => c.CreatedDate);
+
+            var users = new PagedList<User>(query, pageIndex, pageSize);
+            return users;
         }
     }
 }

@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Linq;
-using System.Web.Routing;
-using Candy.Framework.Plugins;
-using Candy.Framework.Infrastructure;
 using System.Collections.Generic;
+using System.Web.Routing;
+using Candy.Framework.Infrastructure;
+using Candy.Framework.Plugins;
 
 namespace Candy.Framework.Mvc.Routes
 {
@@ -15,6 +14,7 @@ namespace Candy.Framework.Mvc.Routes
         {
             this.typeFinder = typeFinder;
         }
+
         /// <summary>
         /// 根据类型查找插件描述信息
         /// </summary>
@@ -35,6 +35,7 @@ namespace Candy.Framework.Mvc.Routes
             }
             return null;
         }
+
         /// <summary>
         /// 注册路由
         /// </summary>

@@ -6,6 +6,7 @@ namespace Candy.Framework.Localization
     public partial class Language : BaseEntity
     {
         private ICollection<LanguageResource> _localeStringResources;
+
         public Language()
         { }
 
@@ -22,10 +23,12 @@ namespace Candy.Framework.Localization
                 _localeStringResources = value;
             }
         }
+
         public virtual void InsertResources(LanguageResource resource)
         {
             this._localeStringResources.Add(resource);
         }
+
         public virtual void InsertResources(IList<LanguageResource> resource)
         {
             foreach (var r in resource)

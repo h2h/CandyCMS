@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Web;
 using System.Web.Security;
 using Candy.Core.Domain;
-
 
 namespace Candy.Core.Services
 {
@@ -22,6 +18,7 @@ namespace Candy.Core.Services
             this._httpContext = httpContext;
             this._userService = userService;
         }
+
         public virtual void SignIn(User user, bool createPersistentCookie)
         {
             var ticket = new FormsAuthenticationTicket(
@@ -50,6 +47,7 @@ namespace Candy.Core.Services
             this._httpContext.Response.Cookies.Add(cookie);
             this._cachedUser = user;
         }
+
         public virtual void SignOut()
         {
             _cachedUser = null;
