@@ -179,41 +179,41 @@
                 <div class="topics">
                     <div class="topic_list">
                         <ul>
-                            @for (var i = 0; i < 20;i++ )
+                            @for (var i = 0; i < 20; i++)
                             {
-                            <li class="topic">
-                                <div class="userinfo">
-                                    <div class="author_avatar">
-                                        <a href="#" class="profile_link" title="Hubert">
-                                            <img class="medium_avatar" src="@Url.Content("~/Themes/Candy.Theme.Default/Content/img/default.jpg")" />
-                                        </a>
-                                    </div>
-                                    <div class="user_meta">
-                                        <a href="#" title="Hubert"><strong>Hubert</strong></a>
-                                        <p>这是什么内容</p>
-                                    </div>
-                                </div>
-                                <div class="topic_info">
-                                    <div class="topic_title">
-                                        <h2 class="title">
-                                            <span class="label label-info">置顶</span>
-                                            <a href="#">这是文章标题</a>
-                                        </h2>
-                                        <div class="topic_comments">
-                                            12
+                                <li class="topic">
+                                    <div class="userinfo">
+                                        <div class="author_avatar">
+                                            <a href="#" class="profile_link" title="Hubert">
+                                                <img class="medium_avatar" src="@Url.Content("~/Themes/Candy.Theme.Default/Content/img/default.jpg")" />
+                                            </a>
+                                        </div>
+                                        <div class="user_meta">
+                                            <a href="#" title="Hubert"><strong>Hubert</strong></a>
+                                            <p>这是什么内容</p>
                                         </div>
                                     </div>
-                                    <div class="topic_meta">
-                                        <a href="#" class="node">编程开发</a>
-                                        <span class='muted'>•</span>
-                                        <a href="#" title="Hubert">Hubert</a>
-                                        <span class='muted'>•</span>
-                                        <span>2014-01-31</span>
-                                        <span class='muted'>•</span>
-                                        最后回复来自<a href="#" title="admin">admin</a>
+                                    <div class="topic_info">
+                                        <div class="topic_title">
+                                            <h2 class="title">
+                                                <span class="label label-info">置顶</span>
+                                                <a href="#">这是文章标题</a>
+                                            </h2>
+                                            <div class="topic_comments">
+                                                12
+                                            </div>
+                                        </div>
+                                        <div class="topic_meta">
+                                            <a href="#" class="node">编程开发</a>
+                                            <span class='muted'>•</span>
+                                            <a href="#" title="Hubert">Hubert</a>
+                                            <span class='muted'>•</span>
+                                            <span>2014-01-31</span>
+                                            <span class='muted'>•</span>
+                                            最后回复来自<a href="#" title="admin">admin</a>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
+                                </li>
                             }
                         </ul>
                     </div>
@@ -245,12 +245,12 @@
                         </li>
                     </ul>
                     @*
-                    <div class="nologin">
-                        <div class="loginorreg">
-                            <a href="<?php echo site_url('user/reg');?>" class="btn">注册</a>
-                            <a href="<?php echo site_url('user/login');?>" class="btn">登入</a>
+                        <div class="nologin">
+                            <div class="loginorreg">
+                                <a href="<?php echo site_url('user/reg');?>" class="btn">注册</a>
+                                <a href="<?php echo site_url('user/login');?>" class="btn">登入</a>
+                            </div>
                         </div>
-                    </div>
                     *@
                 </div>
                 <div class="widget" id="status">
@@ -322,7 +322,7 @@
                 <p>&copy; 2013 ifront.me Inc, Some rights reserved.</p>
             </div>
         </div>
-    </div>   
+    </div>
     @Script("/Content/js/jquery.min.js")
     @Script("/Content/js/admin.js")
 </body>

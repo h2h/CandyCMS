@@ -63,21 +63,6 @@ namespace Candy.Plugin.Install.Controllers
             }
         }
 
-        [HttpPost]
-        public ActionResult CreateDatabase()
-        {
-            return Json(new
-            {
-                Status = true
-            });
-        }
-
-        [HttpPost]
-        public ActionResult Configure()
-        {
-            return View();
-        }
-
         public object Reinstall()
         {
             var areaName = ControllerContext.RouteData.DataTokens["area"];
