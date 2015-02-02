@@ -23,5 +23,13 @@ namespace Candy.Core.Services
         {
             this._termRepository.Insert(model);
         }
+        /// <summary>
+        /// 更新数据
+        /// </summary>
+        /// <param name="model"></param>
+        public void Update(Term model)
+        {
+ 
+        }
     }
 }

@@ -1,9 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using Candy.Framework;
 using Candy.Framework.Data;
+
+using Candy.Core.Domain;
+using Candy.Framework.Infrastructure;
+using Candy.Core.Services;
 
 namespace Candy.Plugin.Install.Services
 {
@@ -11,12 +16,15 @@ namespace Candy.Plugin.Install.Services
     {
         private readonly IDbContext _dbContext;
         private readonly IWebHelper _webHelper;
+        private readonly IRepository<User> _userRepository;
 
         public InstallationService(IDbContext dbContext,
-            IWebHelper webHelper)
+            IWebHelper webHelper,
+            IRepository<User> userRepository)
         {
             this._dbContext = dbContext;
             this._webHelper = webHelper;
+            this._userRepository = userRepository;
         }
 
         protected virtual void ExecuteSqlFile(string path)
@@ -58,7 +66,13 @@ namespace Candy.Plugin.Install.Services
 
         protected virtual void UpdateDefaultUser(string email, string password, string username)
         {
+            var userService = EngineContext.Current.Resolve<IUserService>();
 
+            var registerModel = new RegisterUserModel();
+            registerModel.Email = email;
+            registerModel.Password = password;
+            registerModel.UserName = username;
+            userService.Register(registerModel);
         }
 
         public virtual void InstallData(string email, string password, string username, bool installSampleData = true)

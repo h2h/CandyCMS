@@ -175,6 +175,9 @@
     <Content Include="Content\js\controllers\bootstrap.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\js\controllers\Taxonomy.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\js\controllers\Users.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -260,6 +263,10 @@
     <Content Include="Views\User\index.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Views\Taxonomy\Index.cshtml" />
+    <Content Include="Views\Taxonomy\Category.cshtml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -276,6 +283,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PluginController.cs" />
     <Compile Include="Controllers\SettingsController.cs" />
+    <Compile Include="Controllers\TaxonomyController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Domain\SiteSettingModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

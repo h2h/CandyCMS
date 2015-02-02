@@ -46,6 +46,14 @@ angular.module('app').run(
 		    .state('admin.users.list', {
 		        url: '/list',
 		        templateUrl: '/Admin/User/'
+		    })
+		    .state('admin.taxonomy', {
+		        url: '/taxonomy',
+		        template: '<div ui-view class="fade-in-up"></div>'
+		    })
+		    .state('admin.taxonomy.category', {
+		        url: '/category',
+                templateUrl:'/Admin/Taxonomy/Category/'
 		    });
 		}
 	]
