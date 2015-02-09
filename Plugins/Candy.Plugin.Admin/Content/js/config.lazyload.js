@@ -1,6 +1,16 @@
 ﻿angular.module('app').constant('JQ_CONFIG', {
-    chosen: ['Plugins/Candy.Plugin.Admin/Content/plugins/jquery/chosen/chosen.jquery.min.js',
-			 'Plugins/Candy.Plugin.Admin/Content/plugins/jquery/chosen/chosen.css']
+    chosen: [
+        'Plugins/Candy.Plugin.Admin/Content/plugins/jquery/chosen/chosen.jquery.min.js',
+        'Plugins/Candy.Plugin.Admin/Content/plugins/jquery/chosen/chosen.css'
+    ],
+    simditor: [
+        'Plugins/Candy.Plugin.Admin/Content/plugins/jquery/simditor/module.min.js',
+        'Plugins/Candy.Plugin.Admin/Content/plugins/jquery/simditor/uploader.min.js',
+        'Plugins/Candy.Plugin.Admin/Content/plugins/jquery/simditor/hotkeys.min.js',
+        'Plugins/Candy.Plugin.Admin/Content/plugins/jquery/simditor/simditor.min.js',
+        'Plugins/Candy.Plugin.Admin/Content/plugins/jquery/simditor/simditor.css',
+    ]
+
 }).config(['$ocLazyLoadProvider', function ($ocLazyLoadProvider) {
     $ocLazyLoadProvider.config({
         debug: false,

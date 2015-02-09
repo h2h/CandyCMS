@@ -22,7 +22,8 @@ namespace Candy.Core
             builder.RegisterType<LocalizationService>().As<ILocalizationService>().InstancePerLifetimeScope();
             builder.RegisterType<UserService>().As<IUserService>().InstancePerLifetimeScope();
             builder.RegisterType<FormsAuthenticationService>().As<IAuthenticationService>().InstancePerLifetimeScope();
-
+            builder.RegisterType<TermService>().As<ITermService>().InstancePerLifetimeScope();
+            builder.RegisterType<TermTaxonomyService>().As<ITermTaxonomyService>().InstancePerLifetimeScope();
             //builder.RegisterSource(new SettingsSource());
         }
     }

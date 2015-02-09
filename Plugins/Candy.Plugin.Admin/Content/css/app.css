@@ -4272,6 +4272,10 @@ a.text-#000000:hover {
     border-bottom: 1px solid #dee5e7;
 }
 
+.b-b-none {
+    border-bottom: none;
+}
+
 .b-l {
     border-left: 1px solid #dee5e7;
 }
@@ -5139,7 +5143,6 @@ a.text-#000000:hover {
                 -moz-animation: movingbar 0.75s infinite;
                 animation: movingbar 0.75s infinite;
             }
-
 /* Moving bar */
 
 @-webkit-keyframes movingbar {
@@ -5271,4 +5274,10 @@ a.text-#000000:hover {
     99.9% {
         background-color: #7266ba;
     }
+}
+
+
+#CreatePage .simditor {
+    border-top: none;
+    border-bottom: none;
 }

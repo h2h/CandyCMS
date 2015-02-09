@@ -5,33 +5,49 @@ using System.Web;
 using System.Web.Mvc;
 
 using Candy.Core.Domain;
+using Candy.Core.Services;
+using Candy.Plugin.Admin.Domain;
 
 namespace Candy.Plugin.Admin.Controllers
 {
     public class TaxonomyController : BaseAdminController
     {
+        private readonly ITermTaxonomyService _taxonomyService;
+
+        public TaxonomyController(ITermTaxonomyService taxonomyService)
+        {
+            this._taxonomyService = taxonomyService;
+        }
         public ActionResult Category()
         {
             return View();
+        }
+        public ActionResult GetCategoryList()
+        {
+            var categories = this._taxonomyService.GetPagedTaxonomy(TaxonomyType.Category);
+            return Json(categories, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Create()
         {
             return View();
         }
-
-        public ActionResult Create(FormCollection collection)
+        [HttpPost]
+        public ActionResult Create(CreateTermTaxonomyModel model)
         {
             var taxonomy = new TermTaxonomy();
             taxonomy.Count = 0;
-            taxonomy.Description = string.Empty;
-            taxonomy.Taxonomy = "";
+            taxonomy.Description = model.Description;
+            taxonomy.Taxonomy = model.Taxonomy;
+            taxonomy.Term = new Term
+            {
+                Name = model.Name,
+                Slug = model.Slug
+            };
 
-            var term = new Term();
-            term.Name = "";
-            term.Slug = "";
+            this._taxonomyService.Create(taxonomy);
 
-            return View();
+            return Json("true");
         }
         // GET: Taxonomy
         public ActionResult Index()

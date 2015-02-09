@@ -1,0 +1,50 @@
+﻿@{
+    Layout = null;
+}
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">@Html.Lang("Candy.Plugin.Admin.Setting.BaseSetting")</h1>
+    <small class="text-muted">@Html.Lang("Candy.Plugin.Admin.Setting.BaseSettingDescription")</small>
+</div>
+
+<div class="wrapper-md ng-scope" ng-controller="PagesCtrl">
+    <div class="hbox hbox-auto-xs">
+        <div class="col r-r">
+            <form class="box-shadow" id="CreatePage">
+                <input type="text" class="form-control input-lg no-radius" placeholder="请输入页面标题" />
+                <textarea id="simditor" class="form-control" placeholder="请输入页面内容"></textarea>
+            </form>
+        </div>
+        <div class="col w-xxl p-l-md">
+            <div class="panel panel-default">
+                <div class="panel-heading font-bold">发布</div>
+                <ul class="list-group no-radius">
+                    <li class="list-group-item">
+                        <span class="pull-right">45,000</span>
+                        <span class="label bg-primary">1</span>
+                        .inc company
+                    </li>
+                    <li class="list-group-item">
+                        <span class="pull-right">23,200</span>
+                        <span class="label bg-info">2</span>
+                        Gamecorp
+                    </li>
+                    <li class="list-group-item">
+                        <span class="pull-right">21,000</span>
+                        <span class="label bg-warning">3</span>
+                        Starup
+                    </li>
+                </ul>
+                <div class="panel-footer bg-light">
+                    <button class="btn btn-default">保存草稿</button>
+                    <button class="btn btn-success pull-right">发布</button>
+                </div>
+            </div>
+            <div class="panel panel-default m-b-none">
+                <div class="panel-heading font-bold">发布</div>
+                <div class="panel-body">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

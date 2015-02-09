@@ -35,6 +35,10 @@ angular.module('app').run(
                 url: '/page',
                 template: '<div ui-view class="fade-in-up"></div>'
             })
+            .state('admin.page.create', {
+                url: '/create',
+                templateUrl:'/Admin/Page/Create/'
+            })
 		    .state('admin.page.profile', {
 		        url: '/profile',
 		        templateUrl: '/Admin/User/Profile/'

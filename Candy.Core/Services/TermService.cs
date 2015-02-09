@@ -19,17 +19,25 @@ namespace Candy.Core.Services
         /// 插入到数据库
         /// </summary>
         /// <param name="model"></param>
-        public void Create(Term model)
+        public void Create(Term entity)
         {
-            this._termRepository.Insert(model);
+            this._termRepository.Insert(entity);
         }
         /// <summary>
         /// 更新数据
         /// </summary>
         /// <param name="model"></param>
-        public void Update(Term model)
+        public void Update(Term entity)
         {
- 
+            this._termRepository.Update(entity);
+        }
+        /// <summary>
+        /// 删除数据
+        /// </summary>
+        /// <param name="entity"></param>
+        public void Delete(Term entity)
+        {
+            this._termRepository.Delete(entity);
         }
     }
 }
