@@ -148,6 +148,7 @@
     <Content Include="Languages\en-US.json" />
     <Content Include="Languages\zh-CN.json" />
     <Content Include="Images\Head\Thumbs.db" />
+    <None Include="Properties\PublishProfiles\CandyCMS.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

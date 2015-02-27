@@ -1,2 +1,0 @@
-# CandyCMS
-Candy CMS

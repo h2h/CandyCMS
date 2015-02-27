@@ -1,0 +1,56 @@
+﻿@{
+    Layout = null;
+}
+<div class="bg-light lter b-b wrapper-md">
+    <h1 class="m-n font-thin h3">@Html.Lang("Candy.Plugin.Admin.Setting.BaseSetting")</h1>
+    <small class="text-muted">@Html.Lang("Candy.Plugin.Admin.Setting.BaseSettingDescription")</small>
+</div>
+
+<div class="wrapper-md ng-scope" ng-controller="PagesCtrl">
+    <div class="hbox hbox-auto-xs">
+        <div class="col r-r">
+            <form class="box-shadow" id="CreatePage">
+                <input type="text" class="form-control input-lg no-radius" placeholder="请输入页面标题" />
+                <textarea id="simditor" class="form-control" placeholder="请输入页面内容"></textarea>
+            </form>
+        </div>
+        <div class="col w-xxl p-l-md">
+            <div class="panel panel-default">
+                <div class="panel-heading font-bold">发布</div>
+                <ul class="list-group no-radius">
+                    <li class="list-group-item">
+                        <span class="pull-right">@DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")</span>
+                        发布时间
+                    </li>
+                    <li class="list-group-item">
+                        <span class="pull-right">@DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")</span>
+                        公开度
+                    </li>
+                </ul>
+                <div class="panel-footer">
+                    <button class="btn btn-default">保存草稿</button>
+                    <button class="btn btn-success pull-right">发布</button>
+                </div>
+            </div>
+            <div class="panel panel-default m-b-none">
+                <div class="panel-heading font-bold">发布</div>
+                <ul class="list-group no-radius">
+                    <li class="list-group-item">
+                        <div class="form-group m-b-none">
+                            <label>父级</label>
+                            <select class="form-control">
+                                <option value="0">无</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="form-group m-b-none">
+                            <label>别名</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                    </li>
+               </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -39,6 +39,10 @@ angular.module('app').run(
                 url: '/create',
                 templateUrl:'/Admin/Page/Create/'
             })
+            .state('admin.page.list', {
+                url: '/index',
+                templateUrl:'/Admin/Page/Index/'
+            })
 		    .state('admin.page.profile', {
 		        url: '/profile',
 		        templateUrl: '/Admin/User/Profile/'
