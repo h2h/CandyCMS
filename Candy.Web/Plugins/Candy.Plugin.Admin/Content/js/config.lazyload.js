@@ -9,6 +9,11 @@
         'Plugins/Candy.Plugin.Admin/Content/plugins/jquery/simditor/hotkeys.min.js',
         'Plugins/Candy.Plugin.Admin/Content/plugins/jquery/simditor/simditor.min.js',
         'Plugins/Candy.Plugin.Admin/Content/plugins/jquery/simditor/simditor.css',
+    ],
+    dataTable: [
+        'Plugins/Candy.Plugin.Admin/Content/plugins/jquery/datatables/jquery.dataTables.min.js',
+        'Plugins/Candy.Plugin.Admin/Content/plugins/jquery/datatables/dataTables.bootstrap.js',
+        'Plugins/Candy.Plugin.Admin/Content/plugins/jquery/datatables/dataTables.bootstrap.css'
     ]
 
 }).config(['$ocLazyLoadProvider', function ($ocLazyLoadProvider) {

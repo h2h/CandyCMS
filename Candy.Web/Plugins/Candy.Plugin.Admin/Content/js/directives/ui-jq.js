@@ -50,9 +50,6 @@ angular.module('ui.jq', ['ui.load']).value('uiJqConfig', {
                 }
 
                 function callPlugin() {
-                    console.log(elm);
-                    console.log(attrs.uiJq);
-                    console.log(elm[attrs.uiJq]);
                     $timeout(function () {
                         elm[attrs.uiJq].apply(elm, getOptions());
                     }, 0, false);

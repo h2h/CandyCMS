@@ -60,6 +60,20 @@
                     </div>
                 </div>
                 <div class="table-responsive">
+                    <table id="Categories" class="table table-striped b-t b-l b-light">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <label class="i-checks m-b-none">
+                                        <input type="checkbox" ng-click="selectAll($event)" ng-checked="isSelectedAll()">
+                                        <i></i>
+                                    </label>
+                                </th>
+                                <th>名称</th>
+                                <th>描述</th>
+                            </tr>
+                        </thead>
+                    </table>
                     <table class="table table-striped b-t b-l b-light">
                         <thead>
                             <tr>
@@ -74,7 +88,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="e in entities" ng-class="getSelectedClass(e.id)">
+                            <tr ng-animate="animate" ng-repeat="e in entities" ng-class="getSelectedClass(e.id)">
                                 <td>
                                     <label class="i-checks m-b-none">
                                         <input type="checkbox" name="post[]" value="{{e.Id}}" ng-checked="isSelected(e.id)" ng-click="updateSelection($event,e.id)">

@@ -43,7 +43,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="e in entities" ng-class="getSelectedClass(e.id)">
+                    <tr ng-animate="animate" ng-repeat="e in entities" ng-class="getSelectedClass(e.id)">
                         <td>
                             <label class="i-checks m-b-none">
                                 <input type="checkbox" name="post[]" ng-checked="isSelected(e.id)" ng-click="updateSelection($event,e.id)">

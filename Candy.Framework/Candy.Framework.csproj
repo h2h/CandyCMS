@@ -143,6 +143,7 @@
     <Compile Include="Mvc\Extensions\DependencyRegistrarExtensions.cs" />
     <Compile Include="Mvc\Extensions\UrlHelperExtensions.cs" />
     <Compile Include="Mvc\Html\ThemeExtensions.cs" />
+    <Compile Include="Mvc\Result\JsonNetResult.cs" />
     <Compile Include="Mvc\Routes\IRouteProvider.cs" />
     <Compile Include="Mvc\Routes\IRoutePublisher.cs" />
     <Compile Include="Mvc\Routes\RouteCollectionExtensions.cs" />
