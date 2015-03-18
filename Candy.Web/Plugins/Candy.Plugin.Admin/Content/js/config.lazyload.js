@@ -24,10 +24,17 @@
 			{
 			    name: 'ui.select',
 			    files: [
-					'vendor/modules/angular-ui-select/select.min.js',
-					'vendor/modules/angular-ui-select/select.min.css'
+					'Plugins/Candy.Plugin.Admin/Content/plugins/angular/angular-ui-select/select.min.css',
+					'Plugins/Candy.Plugin.Admin/Content/plugins/angular/angular-ui-select/select.min.js'
 			    ]
-			}
+			},
+            {
+                name: 'ui.grid',
+                files: [
+                    'Plugins/Candy.Plugin.Admin/Content/plugins/angular/angular-ui-grid/ui-grid.css',
+                    'Plugins/Candy.Plugin.Admin/Content/plugins/angular/angular-ui-grid/ui-grid.js'
+                ]
+            }
         ]
     });
 }]);

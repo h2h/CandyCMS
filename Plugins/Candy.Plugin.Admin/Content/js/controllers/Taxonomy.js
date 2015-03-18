@@ -24,10 +24,23 @@ app.controller('CategoryCtrl', ['$scope', '$http', 'uiLoad', 'JQ_CONFIG', functi
                 { "data": "Id" },
                 { "data": "Term.Name" },
                 { "data": "Description" },
-            ]
+            ],
+            "language": {
+                "lengthMenu": "每页显示 _MENU_ 条",
+                "zeroRecords": "Nothing found - sorry",
+                "info": "当前显示第 _PAGE_ 页，共 _PAGES_ 页",
+                "infoEmpty": "No records available",
+                "infoFiltered": "(filtered from _MAX_ total records)",
+                "paginate": {
+                    "first": "第一页",
+                    "last": "末页",
+                    "next": "下一页",
+                    "previous": "上一页"
+                }
+            }
         });
     });
-    
+
 
     /*
     

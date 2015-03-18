@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Candy.Core.Domain;
 using Candy.Framework.Data;
@@ -13,11 +11,13 @@ namespace Candy.Core.Services
     {
         private readonly ITermService _termService;
         private readonly IRepository<TermTaxonomy> _taxonomyRepository;
+
         public TermTaxonomyService(ITermService termService, IRepository<TermTaxonomy> taxonomyRepository)
         {
             this._termService = termService;
             this._taxonomyRepository = taxonomyRepository;
         }
+
         public void Create(TermTaxonomy entity)
         {
             this._termService.Create(entity.Term);
@@ -62,7 +62,7 @@ namespace Candy.Core.Services
             var query = this._taxonomyRepository.Table;
 
             query = query.Where(a => a.Taxonomy.Equals(taxonomy.ToString(), StringComparison.OrdinalIgnoreCase));
-            
+
             if (!string.IsNullOrEmpty(searchKey))
                 query = query.Where(a => a.Term.Name.Contains(searchKey) || a.Term.Slug.Contains(searchKey));
 

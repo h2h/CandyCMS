@@ -44,7 +44,6 @@ namespace Candy.Web
             RegisterRoute(RouteTable.Routes);
 
             var config = EngineContext.Current.Resolve<CandyConfig>();
-
             if (config.IsInstalled)
             {
             }
