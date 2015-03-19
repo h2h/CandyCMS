@@ -101,6 +101,7 @@
     <Compile Include="Domain\Article.cs" />
     <Compile Include="Domain\IPagedList.cs" />
     <Compile Include="Domain\LoginUserModel.cs" />
+    <Compile Include="Domain\Page.cs" />
     <Compile Include="Domain\PagedList.cs" />
     <Compile Include="Domain\Post.cs" />
     <Compile Include="Domain\RegisterUserModel.cs" />
@@ -118,6 +119,7 @@
     <Compile Include="Services\IAuthenticationService.cs" />
     <Compile Include="Services\ILanguageService.cs" />
     <Compile Include="Services\ILocalizationService.cs" />
+    <Compile Include="Services\IPageService.cs" />
     <Compile Include="Services\IPostService.cs" />
     <Compile Include="Services\ISettingService.cs" />
     <Compile Include="Services\ITermRelationshipService.cs" />
@@ -126,6 +128,7 @@
     <Compile Include="Services\IUserService.cs" />
     <Compile Include="Services\LanguageService.cs" />
     <Compile Include="Services\LocalizationService.cs" />
+    <Compile Include="Services\PageService.cs" />
     <Compile Include="Services\SettingService.cs" />
     <Compile Include="Services\TermService.cs" />
     <Compile Include="Services\TermTaxonomyService.cs" />

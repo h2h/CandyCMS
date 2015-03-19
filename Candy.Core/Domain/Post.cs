@@ -8,6 +8,8 @@ namespace Candy.Core.Domain
     {
         public Post()
         {
+            this.CreatedDate = DateTime.UtcNow;
+            this.EditedDate = DateTime.UtcNow;
         }
 
         /// <summary>
